@@ -1,5 +1,6 @@
 package com.icycouselo.apiwrapper.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.icycouselo.apiwrapper.config.model.ApiWrapperConfigProperties;
 import io.netty.channel.ChannelOption;
 import io.netty.handler.timeout.ReadTimeoutHandler;
@@ -25,6 +26,8 @@ public class ApiWrapperConfig {
 
     private final ApiWrapperConfigProperties configProperties;
     private static final String HOST_HEADER_KEY = "X-RapidAPI-Host";
+    private static final String API_KEY_HEADER_KEY = "X-RapidAPI-Key";
+
 
     private HttpClient getHttpClient() {
         return HttpClient.create()
@@ -44,6 +47,7 @@ public class ApiWrapperConfig {
                 .baseUrl(configProperties.getBaseUrl())
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .defaultHeader(HOST_HEADER_KEY, configProperties.getHost())
+                .defaultHeader(API_KEY_HEADER_KEY, configProperties.getApiKey())
                 .build();
 
     }

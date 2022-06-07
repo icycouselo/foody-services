@@ -1,13 +1,14 @@
 package com.icycouselo.apiwrapper.controller;
 
+import com.icycouselo.apiwrapper.dto.extractedrecipe.ExractedRecipeDTO;
 import com.icycouselo.apiwrapper.service.RFNService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Mono;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -19,9 +20,10 @@ import java.nio.charset.StandardCharsets;
 public class RFNController {
     private final RFNService rfnService;
     @GetMapping("/extract")
-    public Mono<String> getExtractedRecipe(@RequestParam String url) {
+    public ExractedRecipeDTO getExtractedRecipe(@RequestParam String url) {
         String encodedUrl = URLEncoder.encode(url, StandardCharsets.UTF_8);
-        log.info("URL request paramater is: " + encodedUrl);
+        log.info("Extracting recipe for: " + encodedUrl);
         return rfnService.getExtractedRecipe(encodedUrl);
+
     }
 }

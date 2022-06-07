@@ -1,11 +1,11 @@
 package com.icycouselo.apiwrapper.service;
 
-import com.icycouselo.apiwrapper.config.ApiWrapperConfig;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.icycouselo.apiwrapper.dto.extractedrecipe.ExractedRecipeDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
 
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
@@ -16,13 +16,13 @@ import java.nio.charset.StandardCharsets;
 public class RFNService {
     private final WebClient webClient;
 
-
-    public Mono<String> getExtractedRecipe(String encodedUrl) {
+    public ExractedRecipeDTO getExtractedRecipe(String encodedUrl) {
         String decodedUrl = URLDecoder.decode(encodedUrl, StandardCharsets.UTF_8);
         //todo: validate url to prevent SSRF
-        return webClient.get().uri(uriBuilder ->
-                    uriBuilder.path("/extract")
-                            .queryParam("url", decodedUrl).build())
-                .retrieve().bodyToMono(String.class);
+        ExractedRecipeDTO exractedRecipeDTO = webClient.get().uri(uriBuilder ->
+                        uriBuilder.path("/extract")
+                                .queryParam("url", decodedUrl).build())
+                .retrieve().bodyToMono(ExractedRecipeDTO.class).block();
+        return  exractedRecipeDTO;
     }
 }
