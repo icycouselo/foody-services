@@ -23,6 +23,6 @@ public class RFNController {
     public ExractedRecipeDTO getExtractedRecipe(@RequestParam String url) {
         String encodedUrl = URLEncoder.encode(url, StandardCharsets.UTF_8);
         log.info("Extracting recipe for: " + encodedUrl);
-        return rfnService.getExtractedRecipe(encodedUrl);
+        return rfnService.getExtractedRecipe(encodedUrl).block();
     }
 }

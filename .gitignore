@@ -1,6 +1,6 @@
 /shelf/
 /workspace.xml
-*.class
+.class
 ### STS ###
 .apt_generated
 .classpath

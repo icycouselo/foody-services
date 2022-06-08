@@ -2,6 +2,7 @@ package com.icycouselo.apiwrapper.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.icycouselo.apiwrapper.config.model.ApiWrapperConfigProperties;
+import com.icycouselo.apiwrapper.exception.ApiServiceException;
 import com.icycouselo.apiwrapper.util.webclient.WebClientFilter;
 import io.netty.channel.ChannelOption;
 import io.netty.handler.timeout.ReadTimeoutHandler;
@@ -18,6 +19,8 @@ import reactor.netty.http.client.HttpClient;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+
+import static com.icycouselo.apiwrapper.util.webclient.WebClientFilter.is5xxException;
 
 
 @Configuration
@@ -46,9 +49,6 @@ public class ApiWrapperConfig {
         return WebClient.builder()
                 .clientConnector(new ReactorClientHttpConnector(getHttpClient()))
                 .baseUrl(configProperties.getBaseUrl())
-                .filter(WebClientFilter.logRequest())
-                .filter(WebClientFilter.logResponse())
-                .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .defaultHeader(HOST_HEADER_KEY, configProperties.getHost())
                 .defaultHeader(API_KEY_HEADER_KEY, configProperties.getApiKey())
                 .build();

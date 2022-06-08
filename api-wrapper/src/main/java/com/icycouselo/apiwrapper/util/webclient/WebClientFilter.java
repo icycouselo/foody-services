@@ -28,7 +28,6 @@ public class WebClientFilter {
         return ExchangeFilterFunction.ofResponseProcessor(response -> {
             logStatus(response);
             logHeaders(response);
-
             return Mono.just(response);
         });
     }
