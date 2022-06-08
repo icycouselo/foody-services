@@ -1,0 +1,12 @@
+/shelf/
+/workspace.xml
+*.class
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+

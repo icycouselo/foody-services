@@ -24,6 +24,5 @@ public class RFNController {
         String encodedUrl = URLEncoder.encode(url, StandardCharsets.UTF_8);
         log.info("Extracting recipe for: " + encodedUrl);
         return rfnService.getExtractedRecipe(encodedUrl);
-
     }
 }

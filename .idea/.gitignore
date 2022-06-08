@@ -1,6 +1,10 @@
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
+
+/shelf/
+/workspace.xml
+.class
 ### STS ###
 .apt_generated
 .classpath
@@ -179,4 +183,4 @@ target
 .gradle
 README.html
 .exercism
-/workspace.xml
+

@@ -1,6 +1,5 @@
 package com.icycouselo.apiwrapper.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.icycouselo.apiwrapper.dto.extractedrecipe.ExractedRecipeDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,11 +17,11 @@ public class RFNService {
 
     public ExractedRecipeDTO getExtractedRecipe(String encodedUrl) {
         String decodedUrl = URLDecoder.decode(encodedUrl, StandardCharsets.UTF_8);
-        //todo: validate url to prevent SSRF
-        ExractedRecipeDTO exractedRecipeDTO = webClient.get().uri(uriBuilder ->
+        return webClient.get().uri(uriBuilder ->
                         uriBuilder.path("/extract")
                                 .queryParam("url", decodedUrl).build())
                 .retrieve().bodyToMono(ExractedRecipeDTO.class).block();
-        return  exractedRecipeDTO;
     }
+
+
 }
