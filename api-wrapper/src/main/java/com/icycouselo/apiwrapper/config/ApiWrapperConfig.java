@@ -1,6 +1,5 @@
 package com.icycouselo.apiwrapper.config;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.icycouselo.apiwrapper.config.model.ApiWrapperConfigProperties;
 import io.netty.channel.ChannelOption;
 import io.netty.handler.timeout.ReadTimeoutHandler;
@@ -9,8 +8,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.netty.http.client.HttpClient;
@@ -45,7 +42,6 @@ public class ApiWrapperConfig {
         return WebClient.builder()
                 .clientConnector(new ReactorClientHttpConnector(getHttpClient()))
                 .baseUrl(configProperties.getBaseUrl())
-                .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .defaultHeader(HOST_HEADER_KEY, configProperties.getHost())
                 .defaultHeader(API_KEY_HEADER_KEY, configProperties.getApiKey())
                 .build();

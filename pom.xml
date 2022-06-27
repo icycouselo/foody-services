@@ -7,7 +7,7 @@
   <groupId>com.icycouselo</groupId>
   <artifactId>foody-services</artifactId>
   <packaging>pom</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.1.0-SNAPSHOT</version>
   <modules>
     <module>api-wrapper</module>
   </modules>
@@ -21,6 +21,8 @@
     <maven.compiler.target>17</maven.compiler.target>
     <spring.boot.maven.plugin.version>2.7.0</spring.boot.maven.plugin.version>
     <spring.boot.dependencies.version>2.7.0</spring.boot.dependencies.version>
+    <okhttp3.mockwebserver.version>4.9.3</okhttp3.mockwebserver.version>
+    <okhttp3.okhttp.version>4.9.3</okhttp3.okhttp.version>
   </properties>
 
   <dependencyManagement>
