@@ -1,6 +1,5 @@
 package com.icycouselo.apiwrapper.integration.service;
 
-import com.icycouselo.apiwrapper.controller.RFNController;
 import com.icycouselo.apiwrapper.dto.extractedrecipe.ExractedRecipeDTO;
 import com.icycouselo.apiwrapper.exception.ApiServiceException;
 import com.icycouselo.apiwrapper.service.RFNService;
@@ -8,12 +7,12 @@ import com.icycouselo.apiwrapper.util.TestUtils;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
 import java.io.IOException;
 
@@ -21,7 +20,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestRFNService extends TestUtils {
+class RFNServiceTest {
     private static final String HOST_HEADER_KEY = "X-RapidAPI-Host";
     private final MockWebServer mockWebServer = new MockWebServer();
     private final RFNService rfnService = new RFNService(WebClient.create(mockWebServer.url("/").toString()));
@@ -52,13 +51,9 @@ public class TestRFNService extends TestUtils {
     @Test
     void shouldThrowApiServiceException() {
         String urlParam = "htt://plantbasedrdblog.com/2022/06/red-pesto-pasta/";
-        Exception exception = assertThrows(ApiServiceException.class, () -> {
-            mockWebServer.enqueue(
-                    new MockResponse()
-                            .setResponseCode(500));
-
-            rfnService.getExtractedRecipe(urlParam).block();
-        });
+        enqueueMockserverWithResponse();
+        Mono<ExractedRecipeDTO> extractedRecipeMono = rfnService.getExtractedRecipe(urlParam);
+        Exception exception = assertThrows(ApiServiceException.class, extractedRecipeMono::block);
         String expectedMessage = "Error service response status code: 500";
         String actualMessage = exception.getMessage();
 
@@ -66,17 +61,22 @@ public class TestRFNService extends TestUtils {
 
     }
 
+    private void enqueueMockserverWithResponse() {
+        mockWebServer.enqueue(
+                new MockResponse()
+                        .setResponseCode(500));
+    }
+
     @DisplayName("Return exception from service when given status code is of 4xx")
     @Test
     void shouldThrowApiServiceExceptionFrom4xxStatusCode() {
         String urlParam = "http://plantbasedrdblog.com/2022/06/red-pesto-pasta/";
-        Exception exception = assertThrows(ApiServiceException.class, () -> {
-            mockWebServer.enqueue(
-                    new MockResponse()
-                            .setResponseCode(401));
+        mockWebServer.enqueue(
+                new MockResponse()
+                        .setResponseCode(401));
+        Mono<ExractedRecipeDTO> extractedRecipeMono = rfnService.getExtractedRecipe(urlParam);
+        Exception exception = assertThrows(ApiServiceException.class, extractedRecipeMono::block);
 
-            rfnService.getExtractedRecipe(urlParam).block();
-        });
         String expectedMessage = "Error service response status code: 401";
         String actualMessage = exception.getMessage();
 
@@ -88,13 +88,12 @@ public class TestRFNService extends TestUtils {
     @Test
     void shouldThrowApiServiceExceptionFrom5xxStatusCode() {
         String urlParam = "http://plantbasedrdblog.com/2022/06/red-pesto-pasta/";
-        Exception exception = assertThrows(ApiServiceException.class, () -> {
-            mockWebServer.enqueue(
-                    new MockResponse()
-                            .setResponseCode(500));
+        mockWebServer.enqueue(
+                new MockResponse()
+                        .setResponseCode(500));
+        Mono<ExractedRecipeDTO> extractedRecipeMono = rfnService.getExtractedRecipe(urlParam);
 
-            rfnService.getExtractedRecipe(urlParam).block();
-        });
+        Exception exception = assertThrows(ApiServiceException.class, extractedRecipeMono::block);
         String expectedMessage = "Error service response status code: 500";
         String actualMessage = exception.getMessage();
 
@@ -102,6 +101,5 @@ public class TestRFNService extends TestUtils {
 
     }
 
-    //todo: add error tests
-    //todo: edit .gitignore to prevent uploading .class files
+
 }
