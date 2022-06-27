@@ -2,7 +2,6 @@ package com.icycouselo.apiwrapper.service;
 
 import com.icycouselo.apiwrapper.dto.extractedrecipe.ExractedRecipeDTO;
 import com.icycouselo.apiwrapper.exception.ApiServiceException;
-import com.icycouselo.apiwrapper.exception.RFNException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -13,7 +12,6 @@ import reactor.core.publisher.Mono;
 
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
-import java.util.function.Predicate;
 
 @Service
 @Slf4j
@@ -33,18 +31,20 @@ public class RFNService {
                         error -> {
                             String errMsg = "Error service response status code: ";
                             log.error(errMsg + error.rawStatusCode());
-                        return  Mono.error(
-                                new ApiServiceException(errMsg + error.rawStatusCode(),error.rawStatusCode()));
-                })
+                            return Mono.error(
+                                    new ApiServiceException(errMsg + error.rawStatusCode(), error.rawStatusCode()));
+                        })
                 .onStatus(HttpStatus::is5xxServerError,
                         error -> {
                             String errMsg = "Error service response status code: ";
                             log.error(errMsg + error.rawStatusCode());
-                            return  Mono.error(
-                                    new ApiServiceException(errMsg + error.rawStatusCode(),error.rawStatusCode()));
+                            return Mono.error(
+                                    new ApiServiceException(errMsg + error.rawStatusCode(), error.rawStatusCode()));
                         })
                 .bodyToMono(ExractedRecipeDTO.class);
     }
 
-
 }
+
+
+

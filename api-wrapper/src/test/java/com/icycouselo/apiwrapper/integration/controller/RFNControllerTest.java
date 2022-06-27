@@ -23,7 +23,7 @@ class RFNControllerTest extends TestUtils {
 
     @DisplayName("Return extracted json object when calling controller")
     @Test
-    public void shouldReturnDefaultMessage() throws Exception {
+    void shouldReturnDefaultMessage() throws Exception {
         String urlParam = "https://plantbasedrdblog.com/2022/06/red-pesto-pasta/";
         String json = TestUtils.getFileContent("/responses/extract-from-url.json");
         mockMvc.perform(get("/api/v1/foody-services/extract").content(json)
