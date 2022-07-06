@@ -12,19 +12,19 @@ import java.nio.file.Paths;
 @ActiveProfiles("dev")
 public class TestUtils {
 
+  public static String getFileContent(String uri) {
+    Path filePath = Path.of(getAbsolutePath() + uri);
+    Path path = filePath.normalize();
+    try {
+      return Files.readString(path);
+    } catch (IOException e) {
+      log.error("Can't read file: " + path);
+      throw new RuntimeException(e);
+    }
+  }
 
-    public static String getFileContent(String uri){
-        Path filePath = Path.of(getAbsolutePath() + uri);
-        Path path = filePath.normalize();
-        try {
-            return Files.readString(path);
-        } catch (IOException e) {
-            log.error("Can't read file: " + path);
-            throw new RuntimeException(e);
-        }
-    }
-    private static String getAbsolutePath(){
-        Path resourceDirectory = Paths.get("src","test","resources");
-        return resourceDirectory.toFile().getAbsolutePath();
-    }
+  private static String getAbsolutePath() {
+    Path resourceDirectory = Paths.get("src", "test", "resources");
+    return resourceDirectory.toFile().getAbsolutePath();
+  }
 }
