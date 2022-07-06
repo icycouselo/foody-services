@@ -25,7 +25,7 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
 import static org.hamcrest.Matchers.equalTo;
-import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(SpringExtension.class)
 @WebFluxTest(controllers = RFNController.class)
@@ -52,7 +52,8 @@ class RFNControllerIT extends TestUtils {
     ExractedRecipeDTO recipeDTO = getExtractedRecipeDTO(json);
     Mono<ExractedRecipeDTO> recipeDTOMono = Mono.just(recipeDTO);
 
-    Mockito.when(rfnService.getExtractedRecipe(URLEncoder.encode(urlParam, StandardCharsets.UTF_8)))
+    when(rfnService.isDomainValid(urlParam)).thenCallRealMethod();
+    when(rfnService.getExtractedRecipe(URLEncoder.encode(urlParam, StandardCharsets.UTF_8)))
         .thenReturn(recipeDTOMono);
 
     getWebTestClientHeaderSpec(urlParam, apiPath)
@@ -62,7 +63,8 @@ class RFNControllerIT extends TestUtils {
         .isOk()
         .expectBody(ExractedRecipeDTO.class)
         .value(ExractedRecipeDTO::getPreparationMinutes, equalTo(5));
-    Mockito.verify(rfnService, times(1))
+
+    verify(rfnService, times(1))
         .getExtractedRecipe(URLEncoder.encode(urlParam, StandardCharsets.UTF_8));
   }
 
