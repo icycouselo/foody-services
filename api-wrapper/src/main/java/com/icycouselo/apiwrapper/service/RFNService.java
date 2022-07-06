@@ -2,16 +2,22 @@ package com.icycouselo.apiwrapper.service;
 
 import com.icycouselo.apiwrapper.domain.extractedrecipe.ExractedRecipeDTO;
 import com.icycouselo.apiwrapper.exception.ApiServiceException;
+import com.icycouselo.apiwrapper.exception.RFNException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.validator.routines.DomainValidator;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Service
 @Slf4j
@@ -44,4 +50,18 @@ public class RFNService {
             })
         .bodyToMono(ExractedRecipeDTO.class);
   }
+
+    public boolean isDomainValid(String url) {
+        try {
+            URI uri = new URI(url);
+            String host = uri.getHost();
+            if(!DomainValidator.getInstance(false).isValid(host)){
+                throw new RFNException("Invalid Domain.");
+            }
+            return true;
+        } catch (URISyntaxException e) {
+            log.error(": {} is an invalid URI.", url);
+            throw new RFNException(e.getMessage());
+        }
+    }
 }

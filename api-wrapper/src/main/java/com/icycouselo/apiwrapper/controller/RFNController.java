@@ -1,6 +1,7 @@
 package com.icycouselo.apiwrapper.controller;
 
 import com.icycouselo.apiwrapper.domain.extractedrecipe.ExractedRecipeDTO;
+import com.icycouselo.apiwrapper.exception.RFNException;
 import com.icycouselo.apiwrapper.service.RFNService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +23,10 @@ public class RFNController {
 
   @GetMapping("/extract")
   public Mono<ExractedRecipeDTO> getExtractedRecipe(@RequestParam String url) {
+    if (!rfnService.isDomainValid(url)) {
+      log.error("{}: Invalid domain.",url);
+      throw new RFNException("Invalid domain.");
+    }
     String encodedUrl = URLEncoder.encode(url, StandardCharsets.UTF_8);
     log.info("Extracting recipe for: " + encodedUrl);
     return rfnService.getExtractedRecipe(encodedUrl);
