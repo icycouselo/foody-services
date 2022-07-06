@@ -1,6 +1,6 @@
 package com.icycouselo.apiwrapper.service;
 
-import com.icycouselo.apiwrapper.dto.extractedrecipe.ExractedRecipeDTO;
+import com.icycouselo.apiwrapper.domain.extractedrecipe.ExractedRecipeDTO;
 import com.icycouselo.apiwrapper.exception.ApiServiceException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,34 +17,31 @@ import java.nio.charset.StandardCharsets;
 @Slf4j
 @RequiredArgsConstructor
 public class RFNService {
-    private final WebClient webClient;
+  private final WebClient client;
 
-    public Mono<ExractedRecipeDTO> getExtractedRecipe(String encodedUrl) {
-        String decodedUrl = URLDecoder.decode(encodedUrl, StandardCharsets.UTF_8);
-        return webClient.get()
-                .uri(uriBuilder ->
-                        uriBuilder.path("/extract")
-                                .queryParam("url", decodedUrl).build())
-                .accept(MediaType.APPLICATION_JSON)
-                .retrieve()
-                .onStatus(HttpStatus::is4xxClientError,
-                        error -> {
-                            String errMsg = "Error service response status code: ";
-                            log.error(errMsg + error.rawStatusCode());
-                            return Mono.error(
-                                    new ApiServiceException(errMsg + error.rawStatusCode(), error.rawStatusCode()));
-                        })
-                .onStatus(HttpStatus::is5xxServerError,
-                        error -> {
-                            String errMsg = "Error service response status code: ";
-                            log.error(errMsg + error.rawStatusCode());
-                            return Mono.error(
-                                    new ApiServiceException(errMsg + error.rawStatusCode(), error.rawStatusCode()));
-                        })
-                .bodyToMono(ExractedRecipeDTO.class);
-    }
-
+  public Mono<ExractedRecipeDTO> getExtractedRecipe(String encodedUrl) {
+    String decodedUrl = URLDecoder.decode(encodedUrl, StandardCharsets.UTF_8);
+    return client
+        .get()
+        .uri(uriBuilder -> uriBuilder.path("/extract").queryParam("url", decodedUrl).build())
+        .accept(MediaType.APPLICATION_JSON)
+        .retrieve()
+        .onStatus(
+            HttpStatus::is4xxClientError,
+            error -> {
+              String errMsg = "Error service response status code: ";
+              log.error(errMsg + error.rawStatusCode());
+              return Mono.error(
+                  new ApiServiceException(errMsg + error.rawStatusCode(), error.rawStatusCode()));
+            })
+        .onStatus(
+            HttpStatus::is5xxServerError,
+            error -> {
+              String errMsg = "Error service response status code: ";
+              log.error(errMsg + error.rawStatusCode());
+              return Mono.error(
+                  new ApiServiceException(errMsg + error.rawStatusCode(), error.rawStatusCode()));
+            })
+        .bodyToMono(ExractedRecipeDTO.class);
+  }
 }
-
-
-

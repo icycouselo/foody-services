@@ -5,6 +5,14 @@
 .idea/**/dictionaries
 .idea/**/shelf
 
+
+.classpath
+.project
+.settings/
+target/
+*/target/*
+*/target/**
+
 # SonarLint plugin
 .idea/sonarlint/
 
