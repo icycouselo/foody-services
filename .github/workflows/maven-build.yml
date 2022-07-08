@@ -34,7 +34,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: $APPLICATION_NAME
+          name: ${{ env.APPLICATION_NAME }}
           path: staging
           retention-days: 5
 
