@@ -28,7 +28,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Package application and create artifact
-        run: mvn verify -Djar.finalName=$APPLICATION_NAME
+        run: mvn verify -Djar.finalName=${{ env.APPLICATION_NAME }}
       - name: Create upload folder
         run: mkdir staging && cp -r */target/* staging
       - name: Upload artifact
