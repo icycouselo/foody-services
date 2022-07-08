@@ -1,13 +1,20 @@
 # This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Java CI with Maven
+name: maven-build
+env:
+  APPLICATION_NAME: api-wrapper
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - develop
+      - 'feature/**'
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+      - develop
 
 jobs:
   build:
@@ -20,5 +27,10 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Build with Maven
-        run: mvn verify -Djar.finalName=api-wrapper
+      - name: Maven Build
+        run: mvn verify -Djar.finalName=$APPLICATION_NAME
+  - run: mkdir upload && cp */target/* upload
+  - uses: actions/upload-artifact@v3
+    with:
+      name: $APPLICATION_NAME
+      path: upload
