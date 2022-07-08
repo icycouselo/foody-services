@@ -30,10 +30,11 @@ jobs:
       - name: Package application and create artifact
         run: mvn verify -Djar.finalName=$APPLICATION_NAME
       - name: Create upload folder
-        run: mkdir staging && cp */target/* staging
+        run: mkdir staging && cp -r */target/* staging
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: $APPLICATION_NAME
           path: staging
           retention-days: 5
+
