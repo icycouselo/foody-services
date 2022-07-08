@@ -29,8 +29,10 @@ jobs:
           cache: maven
       - name: Maven Build
         run: mvn verify -Djar.finalName=$APPLICATION_NAME
-  - run: mkdir upload && cp */target/* upload
-  - uses: actions/upload-artifact@v3
-    with:
-      name: $APPLICATION_NAME
-      path: upload
+      - name: Create upload directory
+        run: mkdir upload && cp */target/* upload
+      - name: Upload artifact
+      - uses: actions/upload-artifact@v3
+        with:
+          name: $APPLICATION_NAME
+          path: upload
