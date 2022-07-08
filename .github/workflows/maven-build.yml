@@ -3,7 +3,7 @@
 
 name: Maven Build
 env:
-  APPLICATION_NAME: api-wrapper
+  APPLICATION_NAME: foody-services
 
 on:
   push:
