@@ -11,10 +11,10 @@ jobs:
   snyk-security:
     runs-on: ubuntu-latest
     steps:
-      - name: Download artifact
+      - name: Download artifact # https://github.com/marketplace/actions/download-workflow-artifact
         uses: dawidd6/action-download-artifact@v2
         with:
-          workflow: Maven Java 17 Build
+          workflow: ./.github/workflows/java17-temurin-maven-template.yml
           name: ${{ inputs.application_name }}
       - name: Snyk security tests
         uses: snyk/actions/maven-3-jdk-11@master
