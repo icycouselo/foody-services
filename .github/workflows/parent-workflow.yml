@@ -22,5 +22,5 @@ jobs:
   include-snyk-security-tests:
     uses: ./.github/workflows/snyk-security-tests-template.yml
     with:
-      auth-token: ${{ secret.SNYK_TOKEN }}
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
