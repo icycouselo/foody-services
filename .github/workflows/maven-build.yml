@@ -17,10 +17,6 @@ on:
 jobs:
   include-icy-maven-build:
     uses: ./.github/workflows/icy-maven-build.yml
-    with:
-      java_version: '17'
-      distribution: 'temurin'
-
 
 #  build:
 #    runs-on: ubuntu-latest
