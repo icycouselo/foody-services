@@ -21,8 +21,6 @@ jobs:
 #      executable_location: '*/target/*'
   include-snyk-security-tests:
     uses: ./.github/workflows/snyk-security-tests-template.yml
-    with:
-      application_name: api-wrapper
 
 
 
