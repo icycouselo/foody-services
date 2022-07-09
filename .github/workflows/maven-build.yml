@@ -13,7 +13,6 @@ on:
     branches:
       - develop
 
-
 jobs:
   include-icy-maven-build:
     uses: ./.github/workflows/java17-temurin-maven-template.yml

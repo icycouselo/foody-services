@@ -11,10 +11,11 @@ jobs:
   snyk-security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@master
+      - name: Download artifact
+        uses: dawidd6/action-download-artifact@v2
         with:
-          name: staging/${{ inputs.application_name }}
-          path: staging/*
+          workflow: Maven Java 17 Build
+          name: ${{ inputs.application_name }}
       - name: Snyk security tests
         uses: snyk/actions/maven-3-jdk-11@master
         continue-on-error: true # To make sure that SARIF upload gets called
