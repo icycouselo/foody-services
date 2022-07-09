@@ -21,9 +21,5 @@ jobs:
       executable_location: '*/target/*'
   include-snyk-security-tests:
     uses: ./.github/workflows/snyk-security-tests-template.yml
-  include-sonar-lint:
-    uses: ./.github/workflows/sonar-lint-template.yml
-    with:
-      sonar-project-key: icycouselo_foody-services
-      pom-file-location: '*target/*/pom.xml'
+
 
