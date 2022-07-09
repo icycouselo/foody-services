@@ -2,6 +2,9 @@ name: Snyk Security Tests
 
 on:
   workflow_call:
+    secrets:
+      auth-token:
+        required: true
 
 jobs:
   snyk-security:
@@ -11,4 +14,4 @@ jobs:
       - name: Snyk security tests
         uses: snyk/actions/maven-3-jdk-11@master
         with:
-          token: ${{ secrets.SNYK_TOKEN }}
+          auth-token: ${{ secrets.SNYK_TOKEN }}
