@@ -14,4 +14,4 @@ jobs:
       - name: Snyk security tests
         uses: snyk/actions/maven-3-jdk-11@master
         with:
-          auth-token: ${{ secrets.SNYK_TOKEN }}
+          auth-token: ${{ secrets.auth-token }}
