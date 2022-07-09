@@ -6,6 +6,10 @@ on:
       application_name:
         required: true
         type: string
+      executable_location:
+        required: true
+        type: string
+
 
 jobs:
   java17:
@@ -19,5 +23,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Package application and create artifact
+      - name: Maven verify
         run: mvn verify -Djar.finalName=${{ inputs.application_name }}
+      - name: Create upload folder for artifacts
+        run: mkdir staging && cp -r ${{ inputs.executable_location }} staging
