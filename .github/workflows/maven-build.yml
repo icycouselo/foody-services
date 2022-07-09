@@ -16,7 +16,7 @@ on:
 
 jobs:
   include-icy-maven-build:
-    uses: ./.github/workflows/java17-temurin-maven.yml
+    uses: ./.github/workflows/templates/java17-temurin-maven.yml
     with:
       application_name: api-wrapper
       executable_location: '*/target/*'
