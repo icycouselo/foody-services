@@ -12,8 +12,9 @@ on:
   pull_request:
     branches:
       - develop
+
 env:
-  APPLICATION_NAME: 'api-wrapper'
+  APPLICATION_NAME: api-wrapper
 
 jobs:
   include-icy-maven-build:
