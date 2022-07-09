@@ -1,10 +1,10 @@
 on:
   workflow_call:
     inputs:
-      java-version: $JAVA_VERSION
+      java-version: JAVA_VERSION
         required: true
         type: number
-      distribution: $DISTRIBUTION
+      distribution: DISTRIBUTION
         required: true
         type: string
 
