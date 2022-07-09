@@ -14,7 +14,7 @@ jobs:
       - name: Download artifact
         uses: dawidd6/action-download-artifact@v2
         with:
-          workflow: Maven Java 17 Build
+          workflow: Maven verify
           name: ${{ inputs.application_name }}
       - name: Snyk security tests
         uses: snyk/actions/maven-3-jdk-11@master
