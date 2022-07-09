@@ -9,10 +9,10 @@ on:
       - develop
       - 'feature/**'
   pull_request:
-    types: [opened, synchronize, reopened]
     branches:
-      - main
       - develop
+
+
 jobs:
   include-icy-maven-build:
     uses: ./.github/workflows/maven-build.yml
