@@ -28,7 +28,7 @@ public class RFNController {
       throw new RFNException("Invalid domain.");
     }
     String encodedUrl = URLEncoder.encode(url, StandardCharsets.UTF_8);
-    log.info("Extracting recipe for: " + encodedUrl);
+    log.info("Extracting recipe for: {}", encodedUrl);
     return rfnService.getExtractedRecipe(encodedUrl);
   }
 }
