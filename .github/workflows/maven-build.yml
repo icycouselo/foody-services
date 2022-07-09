@@ -20,6 +20,7 @@ jobs:
       application_name: api-wrapper
       executable_location: '*/target/*'
   include-snyk-security-tests:
+    needs: include-icy-maven-build
     uses: ./.github/workflows/snyk-security-tests-template.yml
     with:
       application_name: api-wrapper
