@@ -27,3 +27,9 @@ jobs:
         run: mvn verify -Djar.finalName=${{ inputs.application_name }}
       - name: Create upload folder for artifacts
         run: mkdir staging && cp -r ${{ inputs.executable_location }} staging
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ inputs.application_name }}
+          path: staging
+          retention-days: 5
