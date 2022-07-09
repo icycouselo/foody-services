@@ -13,10 +13,11 @@ on:
     branches:
       - develop
 
-
 jobs:
   include-icy-maven-build:
-    uses: ./.github/workflows/icy-maven-build.yml
+    uses: ./.github/workflows/java17-temurin-maven.yml
+    with:
+      application: 'api-wrapper'
 
 #  build:
 #    runs-on: ubuntu-latest

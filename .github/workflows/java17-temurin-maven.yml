@@ -2,10 +2,14 @@ name: Icy Maven Java 17 Build
 
 on:
   workflow_call:
+    inputs:
+      application:
+        required: true
+        type: string
 
 jobs:
   java17:
-    name: Pass input and secrets to Maven build
+    name: Maven verify
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,3 +19,5 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+      - name: Package application and create artifact
+        run: mvn verify -Djar.finalName=${{ inputs.application }}
