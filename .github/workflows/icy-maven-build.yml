@@ -3,7 +3,7 @@ on:
     inputs:
       java_version: JAVA_VERSION
         required: true
-        type: number
+        type: string
       distribution: DISTRIBUTION
         required: true
         type: string
