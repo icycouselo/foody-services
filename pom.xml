@@ -29,6 +29,8 @@
         <lombok.version>1.18.24</lombok.version>
         <surefire.plugin.version>2.22.2</surefire.plugin.version>
         <maven.failsafe.version>3.0.0-M6</maven.failsafe.version>
+        <sonar.organization>icycouselo</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <dependencyManagement>
