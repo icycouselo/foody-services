@@ -11,11 +11,7 @@ jobs:
   snyk-security:
     runs-on: ubuntu-latest
     steps:
-      - name: Download artifact # https://github.com/marketplace/actions/download-workflow-artifact
-        uses: dawidd6/action-download-artifact@v2
-        with:
-          workflow: java17-temurin-maven-template.yml
-          name: ${{ inputs.application_name }}
+      - uses: actions/checkout@master
       - name: Snyk security tests
         uses: snyk/actions/maven-3-jdk-11@master
         continue-on-error: true # To make sure that SARIF upload gets called
