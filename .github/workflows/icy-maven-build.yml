@@ -1,4 +1,4 @@
-name: Icy Maven Build
+name: Icy Maven Java 17 Build
 
 on:
   workflow_call:
