@@ -13,14 +13,12 @@ on:
     branches:
       - develop
 
-env:
-  APPLICATION_NAME: api-wrapper
 
 jobs:
   include-icy-maven-build:
     uses: ./.github/workflows/java17-temurin-maven.yml
     with:
-      application_name: ${{ env.APPLICATION_NAME }}
+      application_name: api-wrapper
 
 #  build:
 #    runs-on: ubuntu-latest
