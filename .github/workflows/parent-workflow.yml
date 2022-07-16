@@ -14,12 +14,12 @@ on:
       - develop
 
 jobs:
-  include-icy-maven-build:
+  maven-build:
     uses: ./.github/workflows/java17-temurin-maven-template.yml
     with:
       application_name: api-wrapper
       executable_location: '*/target/*'
-  include-snyk-security-tests:
+  snyk-security-tests:
     uses: ./.github/workflows/snyk-security-tests-template.yml
     with:
       secrets:
