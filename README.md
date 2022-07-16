@@ -1,4 +1,4 @@
-![example workflow](https://github.com/icycouselo/foody-services/actions/workflows/maven-build.yml/badge.svg)
+![Build](https://github.com/icycouselo/foody-services/actions/workflows/parent-workflow.yml/badge.svg)
 ![Known Vulnerabilities](https://snyk.io/test/github/icycouselo/foody-services/badge.svg)
 
 An application to retrieve a recipe from a specific URL and extract the recipe metadata.
