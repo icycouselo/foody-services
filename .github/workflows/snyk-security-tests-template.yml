@@ -13,5 +13,5 @@ jobs:
       - uses: actions/checkout@master
       - name: Snyk security tests
         uses: snyk/actions/maven-3-jdk-11@master
-        with:
+        env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
