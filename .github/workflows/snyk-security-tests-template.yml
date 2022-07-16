@@ -3,7 +3,7 @@ name: Snyk Security Tests
 on:
   workflow_call:
     secrets:
-      snykToken:
+      SNYK_TOKEN:
         required: true
 
 jobs:
