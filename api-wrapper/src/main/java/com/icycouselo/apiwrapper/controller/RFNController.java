@@ -31,4 +31,5 @@ public class RFNController {
     log.info("Extracting recipe for: {}", encodedUrl);
     return rfnService.getExtractedRecipe(encodedUrl);
   }
+
 }

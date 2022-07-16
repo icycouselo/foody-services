@@ -10,7 +10,5 @@ Oapi-wrapper/src/test/java/com/icycouselo/apiwrapper/service/RFNServiceTest.java
 capi-wrapper/src/main/java/com/icycouselo/apiwrapper/domain/extractedrecipe/AnalyzedInstruction.java,0\b\0b97fb384d962e36b8d59758f134a8420c877799
 Ü
 Vapi-wrapper/src/main/java/com/icycouselo/apiwrapper/domain/extractedrecipe/Metric.java,b\1\b1d9199c6146658b4da4cc15bc562558b549e99d
-Å
-Qapi-wrapper/src/main/java/com/icycouselo/apiwrapper/controller/RFNController.java,0\0\00458775c9800901114bf34f839526425904e207
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

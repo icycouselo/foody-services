@@ -9,6 +9,7 @@ import com.icycouselo.apiwrapper.util.TestUtils;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +43,8 @@ class RFNControllerIT extends TestUtils {
             .build();
   }
 
-  @DisplayName("Return extracted json object when calling controller")
+  @DisplayName("Get recipe from URL that contains recipes")
+  @Order(1)
   @Test
   void shouldReturnDefaultMessage() throws Exception {
     String json = TestUtils.getFileContent("/responses/extract-from-url.json");
@@ -75,6 +77,7 @@ class RFNControllerIT extends TestUtils {
         .get()
         .uri(uriBuilder -> uriBuilder.path(apiPath).queryParam("url", urlParam).build());
   }
+
 
   private ExractedRecipeDTO getExtractedRecipeDTO(String json) throws JsonProcessingException {
     ObjectMapper mapper = new ObjectMapper();
