@@ -22,6 +22,6 @@ jobs:
   Snyk:
     uses: ./.github/workflows/snyk-security-tests-template.yml
     secrets:
-      snykToken: ${{ secrets.snykToken }}
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
 
