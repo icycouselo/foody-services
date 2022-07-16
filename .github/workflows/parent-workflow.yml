@@ -14,7 +14,7 @@ on:
       - develop
 
 jobs:
-  maven-build:
+  Maven:
     uses: ./.github/workflows/java17-temurin-maven-template.yml
     with:
       application_name: api-wrapper
@@ -23,6 +23,6 @@ jobs:
     uses: ./.github/workflows/snyk-security-tests-template.yml
     with:
       secrets:
-        envPAT: ${{ secrets.SNYK_TOKEN }}
+        snykToken: ${{ secrets.snykToken }}
 
 
