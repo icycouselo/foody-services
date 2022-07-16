@@ -8,6 +8,7 @@ on:
 
 jobs:
   snyk-sca:
+    needs: [java17]
     name: Snyk SCA (Scanning dependencies for vulnerabilities)
     runs-on: ubuntu-latest
     steps:
@@ -24,6 +25,7 @@ jobs:
           sarif_file: snyk.sarif
 
   snyk-sast:
+    needs: [java17]
     name: Snyk SAST (Scan source code for vulnerabilities)
     runs-on: ubuntu-latest
     steps:
