@@ -7,13 +7,13 @@ on:
         required: true
 
 jobs:
-  snyk-security:
+  snyk-sca:
+    name: Snyk SCA (Scanning dependencies for vulnerabilities)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Snyk Security Tests
-        uses: snyk/actions/maven-3-jdk-11@master
-        continue-on-error: true # To make sure that SARIF upload gets called
+      - name: Run Software Composition Analysis
+        uses: snyk/actions/maven@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
@@ -22,4 +22,22 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: snyk.sarif
+  snyk-sast:
+    name: Snyk SAST (Scan source code for vulnerabilities)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Snyk SAST
+        uses: snyk/actions/maven-3-jdk-11@master
+        continue-on-error: true # To make sure that SARIF upload gets called
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          command: code test
+          args: --sarif-file-output=snyk.sarif
+      - name: Upload result to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: snyk.sarif
+
 
