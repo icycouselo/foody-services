@@ -19,10 +19,9 @@ jobs:
     with:
       application_name: api-wrapper
       executable_location: '*/target/*'
-  snyk-security-tests:
+  Snyk:
     uses: ./.github/workflows/snyk-security-tests-template.yml
-    with:
-      secrets:
-        snykToken: ${{ secrets.snykToken }}
+    secrets:
+      snykToken: ${{ secrets.snykToken }}
 
 
