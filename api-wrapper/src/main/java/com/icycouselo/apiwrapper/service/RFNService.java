@@ -1,6 +1,6 @@
 package com.icycouselo.apiwrapper.service;
 
-import com.icycouselo.apiwrapper.domain.extractedrecipe.ExractedRecipeDTO;
+import com.icycouselo.apiwrapper.domain.extractedrecipe.ExtractedRecipeDTO;
 import com.icycouselo.apiwrapper.exception.ApiServiceException;
 import com.icycouselo.apiwrapper.exception.RFNException;
 import lombok.RequiredArgsConstructor;
@@ -17,15 +17,13 @@ import java.net.URISyntaxException;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 @Service
 @Slf4j
 @RequiredArgsConstructor
 public class RFNService {
   private final WebClient client;
 
-  public Mono<ExractedRecipeDTO> getExtractedRecipe(String encodedUrl) {
+  public Mono<ExtractedRecipeDTO> getExtractedRecipe(String encodedUrl) {
     String decodedUrl = URLDecoder.decode(encodedUrl, StandardCharsets.UTF_8);
     return client
         .get()
@@ -48,20 +46,20 @@ public class RFNService {
               return Mono.error(
                   new ApiServiceException(errMsg + error.rawStatusCode(), error.rawStatusCode()));
             })
-        .bodyToMono(ExractedRecipeDTO.class);
+        .bodyToMono(ExtractedRecipeDTO.class);
   }
 
-    public boolean isDomainValid(String url) {
-        try {
-            URI uri = new URI(url);
-            String host = uri.getHost();
-            if(!DomainValidator.getInstance(false).isValid(host)){
-                throw new RFNException("Invalid Domain.");
-            }
-            return true;
-        } catch (URISyntaxException e) {
-            log.error(": {} is an invalid URI.", url);
-            throw new RFNException(e.getMessage());
-        }
+  public boolean isDomainValid(String url) {
+    try {
+      URI uri = new URI(url);
+      String host = uri.getHost();
+      if (!DomainValidator.getInstance(false).isValid(host)) {
+        throw new RFNException("Invalid Domain.");
+      }
+      return true;
+    } catch (URISyntaxException e) {
+      log.error(": {} is an invalid URI.", url);
+      throw new RFNException(e.getMessage());
     }
+  }
 }

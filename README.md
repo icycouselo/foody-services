@@ -10,15 +10,24 @@ An application to retrieve a recipe from a specific URL and extract the recipe m
 * Docker
 
 # Project structure:
+
 ![project-structure](project-structure.png)
 
+# Installation:
 
-# How to Run:
+## MongoDB
 
+For development, you can spin up a mongoDB docker instance as follows:
+> Navigate to``.docker`` in project root and run ``docker compose -f docker-compose-dev.yml``. MongoDB will be available
+> at standard port: **27017**
 
-Build the application with ``mvn package`` in the root directory of the project. This will generate executable jar files in the ``/target``
+## Maven
+
+Build the application with ``mvn package`` in the root directory of the project. This will generate executable jar files
+in the ``/target``
 folder of the different modules.
-# Rest API endpoints: 
+
+# Rest API endpoints:
 
 View OpenApi specifications at:
 ``/swagger-ui.html``

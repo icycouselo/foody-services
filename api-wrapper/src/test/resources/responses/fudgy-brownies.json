@@ -1,0 +1,418 @@
+{
+  "vegetarian": false,
+  "vegan": false,
+  "glutenFree": false,
+  "dairyFree": false,
+  "veryHealthy": false,
+  "cheap": false,
+  "veryPopular": false,
+  "sustainable": false,
+  "lowFodmap": false,
+  "weightWatcherSmartPoints": 0,
+  "gaps": "no",
+  "preparationMinutes": 15,
+  "cookingMinutes": 0,
+  "aggregateLikes": 0,
+  "healthScore": 0,
+  "pricePerServing": 0.0,
+  "extendedIngredients": [
+    {
+      "id": 10211821,
+      "aisle": "Produce",
+      "image": "bell-pepper-orange.png",
+      "consistency": "SOLID",
+      "name": "theelepel paprika poeder",
+      "nameClean": "bell pepper",
+      "original": "1 theelepel paprika poeder",
+      "originalName": "theelepel paprika poeder",
+      "amount": 1.0,
+      "unit": "",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 1.0,
+          "unitShort": "",
+          "unitLong": ""
+        },
+        "metric": {
+          "amount": 1.0,
+          "unitShort": "",
+          "unitLong": ""
+        }
+      }
+    },
+    {
+      "id": 2031,
+      "aisle": "Spices and Seasonings",
+      "image": "chili-powder.jpg",
+      "consistency": "SOLID",
+      "name": "theelepel cayenne peper",
+      "nameClean": "ground cayenne pepper",
+      "original": "0.5 theelepel cayenne peper",
+      "originalName": "theelepel cayenne peper",
+      "amount": 0.5,
+      "unit": "",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 0.5,
+          "unitShort": "",
+          "unitLong": ""
+        },
+        "metric": {
+          "amount": 0.5,
+          "unitShort": "",
+          "unitLong": ""
+        }
+      }
+    },
+    {
+      "id": 1123,
+      "aisle": "Milk, Eggs, Other Dairy",
+      "image": "egg.png",
+      "consistency": "SOLID",
+      "name": "ei",
+      "nameClean": "egg",
+      "original": "1 ei",
+      "originalName": "ei",
+      "amount": 1.0,
+      "unit": "",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 1.0,
+          "unitShort": "",
+          "unitLong": ""
+        },
+        "metric": {
+          "amount": 1.0,
+          "unitShort": "",
+          "unitLong": ""
+        }
+      }
+    },
+    {
+      "id": 4025,
+      "aisle": "Condiments",
+      "image": "mayonnaise.png",
+      "consistency": "LIQUID",
+      "name": "eetlepels mayonaise",
+      "nameClean": "mayonnaise",
+      "original": "4 eetlepels mayonaise",
+      "originalName": "eetlepels mayonaise",
+      "amount": 4.0,
+      "unit": "",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 4.0,
+          "unitShort": "",
+          "unitLong": ""
+        },
+        "metric": {
+          "amount": 4.0,
+          "unitShort": "",
+          "unitLong": ""
+        }
+      }
+    },
+    {
+      "id": 11959,
+      "aisle": "Produce",
+      "image": "arugula-or-rocket-salad.jpg",
+      "consistency": "SOLID",
+      "name": "rucola",
+      "nameClean": "arugula",
+      "original": "50 gr rucola",
+      "originalName": "rucola",
+      "amount": 50.0,
+      "unit": "gr",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 1.764,
+          "unitShort": "oz",
+          "unitLong": "ounces"
+        },
+        "metric": {
+          "amount": 50.0,
+          "unitShort": "gr",
+          "unitLong": "grs"
+        }
+      }
+    },
+    {
+      "id": 11935,
+      "aisle": "Condiments",
+      "image": "ketchup.png",
+      "consistency": "LIQUID",
+      "name": "eetlepels ketchup",
+      "nameClean": "ketchup",
+      "original": "4 eetlepels ketchup",
+      "originalName": "eetlepels ketchup",
+      "amount": 4.0,
+      "unit": "",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 4.0,
+          "unitShort": "",
+          "unitLong": ""
+        },
+        "metric": {
+          "amount": 4.0,
+          "unitShort": "",
+          "unitLong": ""
+        }
+      }
+    },
+    {
+      "id": -1,
+      "aisle": "?",
+      "image": null,
+      "consistency": "SOLID",
+      "name": "glutenvrije broodjes",
+      "nameClean": null,
+      "original": "4 Glutenvrije broodjes",
+      "originalName": "Glutenvrije broodjes",
+      "amount": 4.0,
+      "unit": "",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 4.0,
+          "unitShort": "",
+          "unitLong": ""
+        },
+        "metric": {
+          "amount": 4.0,
+          "unitShort": "",
+          "unitLong": ""
+        }
+      }
+    },
+    {
+      "id": -1,
+      "aisle": "?",
+      "image": null,
+      "consistency": "SOLID",
+      "name": "gehakt",
+      "nameClean": null,
+      "original": "300 gr gehakt",
+      "originalName": "gehakt",
+      "amount": 300.0,
+      "unit": "gr",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 10.582,
+          "unitShort": "oz",
+          "unitLong": "ounces"
+        },
+        "metric": {
+          "amount": 300.0,
+          "unitShort": "gr",
+          "unitLong": "grs"
+        }
+      }
+    },
+    {
+      "id": -1,
+      "aisle": "?",
+      "image": null,
+      "consistency": "SOLID",
+      "name": "witte ui",
+      "nameClean": null,
+      "original": "1 kleine witte ui",
+      "originalName": "kleine witte ui",
+      "amount": 1.0,
+      "unit": "",
+      "meta": [
+        "kleine"
+      ],
+      "measures": {
+        "us": {
+          "amount": 1.0,
+          "unitShort": "",
+          "unitLong": ""
+        },
+        "metric": {
+          "amount": 1.0,
+          "unitShort": "",
+          "unitLong": ""
+        }
+      }
+    },
+    {
+      "id": -1,
+      "aisle": "?",
+      "image": null,
+      "consistency": "SOLID",
+      "name": "teentje knoflook",
+      "nameClean": null,
+      "original": "1 teentje knoflook",
+      "originalName": "teentje knoflook",
+      "amount": 1.0,
+      "unit": "",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 1.0,
+          "unitShort": "",
+          "unitLong": ""
+        },
+        "metric": {
+          "amount": 1.0,
+          "unitShort": "",
+          "unitLong": ""
+        }
+      }
+    },
+    {
+      "id": -1,
+      "aisle": "?",
+      "image": null,
+      "consistency": "SOLID",
+      "name": "eetlepels zelfrijzend glutenvrij meel",
+      "nameClean": null,
+      "original": "2 eetlepels zelfrijzend glutenvrij meel",
+      "originalName": "eetlepels zelfrijzend glutenvrij meel",
+      "amount": 2.0,
+      "unit": "",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 2.0,
+          "unitShort": "",
+          "unitLong": ""
+        },
+        "metric": {
+          "amount": 2.0,
+          "unitShort": "",
+          "unitLong": ""
+        }
+      }
+    },
+    {
+      "id": -1,
+      "aisle": "?",
+      "image": null,
+      "consistency": "SOLID",
+      "name": "peper & zout",
+      "nameClean": null,
+      "original": "peper &amp; zout",
+      "originalName": "peper & zout",
+      "amount": 1.0,
+      "unit": "serving",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 1.0,
+          "unitShort": "serving",
+          "unitLong": "serving"
+        },
+        "metric": {
+          "amount": 1.0,
+          "unitShort": "serving",
+          "unitLong": "serving"
+        }
+      }
+    },
+    {
+      "id": -1,
+      "aisle": "?",
+      "image": null,
+      "consistency": "SOLID",
+      "name": "boter of olie",
+      "nameClean": null,
+      "original": "boter of olie (om in te bakken)",
+      "originalName": "boter of olie (om in te bakken)",
+      "amount": 1.0,
+      "unit": "serving",
+      "meta": [
+        "(om in te bakken)"
+      ],
+      "measures": {
+        "us": {
+          "amount": 1.0,
+          "unitShort": "serving",
+          "unitLong": "serving"
+        },
+        "metric": {
+          "amount": 1.0,
+          "unitShort": "serving",
+          "unitLong": "serving"
+        }
+      }
+    },
+    {
+      "id": -1,
+      "aisle": "?",
+      "image": null,
+      "consistency": "SOLID",
+      "name": "vleestomaten",
+      "nameClean": null,
+      "original": "2 vleestomaten",
+      "originalName": "vleestomaten",
+      "amount": 2.0,
+      "unit": "",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 2.0,
+          "unitShort": "",
+          "unitLong": ""
+        },
+        "metric": {
+          "amount": 2.0,
+          "unitShort": "",
+          "unitLong": ""
+        }
+      }
+    },
+    {
+      "id": -1,
+      "aisle": "?",
+      "image": null,
+      "consistency": "SOLID",
+      "name": "rode ui",
+      "nameClean": null,
+      "original": "1 kleine rode ui",
+      "originalName": "kleine rode ui",
+      "amount": 1.0,
+      "unit": "",
+      "meta": [
+        "kleine"
+      ],
+      "measures": {
+        "us": {
+          "amount": 1.0,
+          "unitShort": "",
+          "unitLong": ""
+        },
+        "metric": {
+          "amount": 1.0,
+          "unitShort": "",
+          "unitLong": ""
+        }
+      }
+    }
+  ],
+  "title": "Glutenvrije burgers",
+  "readyInMinutes": 15,
+  "servings": 4,
+  "sourceUrl": "https://www.leukerecepten.nl/recepten/glutenvrije-burgers/",
+  "openLicense": -1,
+  "image": "https://www.leukerecepten.nl/wp-content/uploads/2022/05/glutenvrije-burgers-liggend-scaled.jpg",
+  "imageType": "jpg",
+  "summary": null,
+  "cuisines": [],
+  "dishTypes": [],
+  "diets": [],
+  "occasions": [],
+  "instructions": null,
+  "analyzedInstructions": [],
+  "sourceName": null,
+  "creditsText": null,
+  "originalId": null
+}

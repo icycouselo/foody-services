@@ -1,0 +1,648 @@
+{
+  "vegetarian": false,
+  "vegan": false,
+  "glutenFree": false,
+  "dairyFree": false,
+  "veryHealthy": false,
+  "cheap": false,
+  "veryPopular": false,
+  "sustainable": false,
+  "lowFodmap": false,
+  "weightWatcherSmartPoints": 0,
+  "gaps": "no",
+  "preparationMinutes": -1,
+  "cookingMinutes": -1,
+  "aggregateLikes": 0,
+  "healthScore": 0,
+  "pricePerServing": 0.0,
+  "extendedIngredients": [
+    {
+      "id": 10016213,
+      "aisle": "Refrigerated;Produce;Ethnic Foods",
+      "image": "tofu.png",
+      "consistency": "SOLID",
+      "name": "tofu",
+      "nameClean": "firm tofu",
+      "original": "350 g firm tofu",
+      "originalName": "firm tofu",
+      "amount": 350.0,
+      "unit": "g",
+      "meta": [
+        "firm"
+      ],
+      "measures": {
+        "us": {
+          "amount": 12.346,
+          "unitShort": "oz",
+          "unitLong": "ounces"
+        },
+        "metric": {
+          "amount": 350.0,
+          "unitShort": "g",
+          "unitLong": "grams"
+        }
+      }
+    },
+    {
+      "id": 4042,
+      "aisle": "Oil, Vinegar, Salad Dressing",
+      "image": "peanut-oil.jpg",
+      "consistency": "LIQUID",
+      "name": "groundnut oil",
+      "nameClean": "peanut oil",
+      "original": "2 teaspoons groundnut oil",
+      "originalName": "groundnut oil",
+      "amount": 2.0,
+      "unit": "teaspoons",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 2.0,
+          "unitShort": "tsps",
+          "unitLong": "teaspoons"
+        },
+        "metric": {
+          "amount": 2.0,
+          "unitShort": "tsps",
+          "unitLong": "teaspoons"
+        }
+      }
+    },
+    {
+      "id": 12023,
+      "aisle": "Ethnic Foods;Spices and Seasonings",
+      "image": "sesame-seeds.png",
+      "consistency": "SOLID",
+      "name": "sesame seeds",
+      "nameClean": "sesame seeds",
+      "original": "2 tablespoons sesame seeds",
+      "originalName": "sesame seeds",
+      "amount": 2.0,
+      "unit": "tablespoons",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 2.0,
+          "unitShort": "Tbsps",
+          "unitLong": "Tbsps"
+        },
+        "metric": {
+          "amount": 2.0,
+          "unitShort": "Tbsps",
+          "unitLong": "Tbsps"
+        }
+      }
+    },
+    {
+      "id": 20027,
+      "aisle": "Baking",
+      "image": "white-powder.jpg",
+      "consistency": "SOLID",
+      "name": "cornflour",
+      "nameClean": "corn starch",
+      "original": "½ tablespoon cornflour",
+      "originalName": "cornflour",
+      "amount": 0.5,
+      "unit": "tablespoon",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 0.5,
+          "unitShort": "Tbsps",
+          "unitLong": "Tbsps"
+        },
+        "metric": {
+          "amount": 0.5,
+          "unitShort": "Tbsps",
+          "unitLong": "Tbsps"
+        }
+      }
+    },
+    {
+      "id": 16124,
+      "aisle": "Ethnic Foods;Condiments",
+      "image": "soy-sauce.jpg",
+      "consistency": "LIQUID",
+      "name": "soy sauce",
+      "nameClean": "soy sauce",
+      "original": "2 tablespoons soy sauce",
+      "originalName": "soy sauce",
+      "amount": 2.0,
+      "unit": "tablespoons",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 2.0,
+          "unitShort": "Tbsps",
+          "unitLong": "Tbsps"
+        },
+        "metric": {
+          "amount": 2.0,
+          "unitShort": "Tbsps",
+          "unitLong": "Tbsps"
+        }
+      }
+    },
+    {
+      "id": 1002068,
+      "aisle": "Oil, Vinegar, Salad Dressing",
+      "image": "vinegar-(white).jpg",
+      "consistency": "LIQUID",
+      "name": "white wine vinegar",
+      "nameClean": "white wine vinegar",
+      "original": "1 tablespoon white wine vinegar",
+      "originalName": "white wine vinegar",
+      "amount": 1.0,
+      "unit": "tablespoon",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 1.0,
+          "unitShort": "Tbsp",
+          "unitLong": "Tbsp"
+        },
+        "metric": {
+          "amount": 1.0,
+          "unitShort": "Tbsp",
+          "unitLong": "Tbsp"
+        }
+      }
+    },
+    {
+      "id": 11215,
+      "aisle": "Produce",
+      "image": "garlic.png",
+      "consistency": "SOLID",
+      "name": "garlic",
+      "nameClean": "garlic",
+      "original": "1 clove of garlic",
+      "originalName": "garlic",
+      "amount": 1.0,
+      "unit": "clove",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 1.0,
+          "unitShort": "clove",
+          "unitLong": "clove"
+        },
+        "metric": {
+          "amount": 1.0,
+          "unitShort": "clove",
+          "unitLong": "clove"
+        }
+      }
+    },
+    {
+      "id": 11819,
+      "aisle": "Produce",
+      "image": "red-chili.jpg",
+      "consistency": "SOLID",
+      "name": "chilli plus extra to serve",
+      "nameClean": "chili pepper",
+      "original": "1 fresh red chilli plus extra to serve",
+      "originalName": "fresh red chilli plus extra to serve",
+      "amount": 1.0,
+      "unit": "",
+      "meta": [
+        "fresh",
+        "red"
+      ],
+      "measures": {
+        "us": {
+          "amount": 1.0,
+          "unitShort": "",
+          "unitLong": ""
+        },
+        "metric": {
+          "amount": 1.0,
+          "unitShort": "",
+          "unitLong": ""
+        }
+      }
+    },
+    {
+      "id": 11216,
+      "aisle": "Produce;Ethnic Foods;Spices and Seasonings",
+      "image": "ginger.png",
+      "consistency": "SOLID",
+      "name": "cm piece of ginger",
+      "nameClean": "ginger",
+      "original": "5 cm piece of ginger",
+      "originalName": "cm piece of ginger",
+      "amount": 5.0,
+      "unit": "",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 5.0,
+          "unitShort": "",
+          "unitLong": ""
+        },
+        "metric": {
+          "amount": 5.0,
+          "unitShort": "",
+          "unitLong": ""
+        }
+      }
+    },
+    {
+      "id": 11011,
+      "aisle": "Produce",
+      "image": "asparagus.png",
+      "consistency": "SOLID",
+      "name": "asparagus",
+      "nameClean": "asparagus",
+      "original": "320 g asparagus",
+      "originalName": "asparagus",
+      "amount": 320.0,
+      "unit": "g",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 11.288,
+          "unitShort": "oz",
+          "unitLong": "ounces"
+        },
+        "metric": {
+          "amount": 320.0,
+          "unitShort": "g",
+          "unitLong": "grams"
+        }
+      }
+    },
+    {
+      "id": 11043,
+      "aisle": "Produce;Ethnic Foods",
+      "image": "bean-sprouts.jpg",
+      "consistency": "SOLID",
+      "name": "beansprouts",
+      "nameClean": "bean sprouts",
+      "original": "150 g beansprouts",
+      "originalName": "beansprouts",
+      "amount": 150.0,
+      "unit": "g",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 5.291,
+          "unitShort": "oz",
+          "unitLong": "ounces"
+        },
+        "metric": {
+          "amount": 150.0,
+          "unitShort": "g",
+          "unitLong": "grams"
+        }
+      }
+    },
+    {
+      "id": 20133,
+      "aisle": "Pasta and Rice;Gluten Free;Ethnic Foods",
+      "image": "dried-rice-noodles.jpg",
+      "consistency": "SOLID",
+      "name": "rice noodles to serve",
+      "nameClean": "rice vermicelli",
+      "original": "200 g rice noodles to serve (optional)",
+      "originalName": "rice noodles to serve (optional)",
+      "amount": 200.0,
+      "unit": "g",
+      "meta": [],
+      "measures": {
+        "us": {
+          "amount": 7.055,
+          "unitShort": "oz",
+          "unitLong": "ounces"
+        },
+        "metric": {
+          "amount": 200.0,
+          "unitShort": "g",
+          "unitLong": "grams"
+        }
+      }
+    }
+  ],
+  "title": "Asparagus stir-fry",
+  "readyInMinutes": -1,
+  "servings": 4,
+  "sourceUrl": "https://www.jamieoliver.com/recipes/vegetable-recipes/asparagus-stir-fry/",
+  "openLicense": -1,
+  "image": "https://img.jamieoliver.com/jamieoliver/recipe-database/134795904.jpg?tr=w-800,h-800",
+  "imageType": "jpg",
+  "summary": null,
+  "cuisines": [],
+  "dishTypes": [],
+  "diets": [],
+  "occasions": [],
+  "instructions": "Tap For Ingredients\n\nMethod\n\nPlace 350g of firm tofu on a plate lined with kitchen paper, then place another layer of kitchen paper on top – this will help soak up some of the moisture. Set aside until ready to use.\n\nPlace a large frying pan over a medium heat, carefully cut the tofu into quarters, then cut each piece into four again. Add 1 teaspoon of groundnut oil to the pan, then add the tofu and leave to cook for 10 to 15 minutes, or until golden and crisp, turning halfway. Remove to a bowl.\n\nToast 2 tablespoons of sesame seeds in the pan, then toss with the tofu to coat.\n\nIn a small bowl, mix ½ a tablespoon of cornflour, 2 tablespoons of soy sauce and 1 tablespoon of white wine vinegar until combined.\n\nPeel and finely chop 1 clove of garlic and trim and finely slice 1 fresh red chilli. Peel a 5cm piece of ginger, then slice into matchsticks. Snap the woody ends from 320g asparagus, and slice on the bias.\n\nPlace a wok over a high heat and add 1 teaspoon of groundnut oil. Once hot, stir in the garlic, chilli and ginger, followed by the asparagus and 150g of beansprouts. Cook for a couple of minutes, or until everything is fragrant and golden, stirring continuously.\n\nStir in the cornflour mixture, reduce the heat to medium and cook for 4 to 5 minutes, or until the sauce has thickened, adding a splash of water, if needed.\n\nServe the veggies alongside the tofu with some extra sliced red chilli and cooked rice noodles, if you like.\n\nPlease enable targetting cookies to show this banner",
+  "analyzedInstructions": [
+    {
+      "name": "",
+      "steps": [
+        {
+          "number": 1,
+          "step": "Tap For Ingredients",
+          "ingredients": [],
+          "equipment": []
+        },
+        {
+          "number": 2,
+          "step": "Place 350g of firm tofu on a plate lined with kitchen paper, then place another layer of kitchen paper on top – this will help soak up some of the moisture. Set aside until ready to use.",
+          "ingredients": [
+            {
+              "id": 10016213,
+              "name": "firm tofu",
+              "localizedName": "firm tofu",
+              "image": "tofu.png"
+            }
+          ],
+          "equipment": []
+        },
+        {
+          "number": 3,
+          "step": "Place a large frying pan over a medium heat, carefully cut the tofu into quarters, then cut each piece into four again.",
+          "ingredients": [
+            {
+              "id": 16213,
+              "name": "tofu",
+              "localizedName": "tofu",
+              "image": "tofu.png"
+            }
+          ],
+          "equipment": [
+            {
+              "id": 404645,
+              "name": "frying pan",
+              "localizedName": "frying pan",
+              "image": "pan.png"
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "step": "Add 1 teaspoon of groundnut oil to the pan, then add the tofu and leave to cook for 10 to 15 minutes, or until golden and crisp, turning halfway.",
+          "ingredients": [
+            {
+              "id": 4042,
+              "name": "peanut oil",
+              "localizedName": "peanut oil",
+              "image": "peanut-oil.jpg"
+            },
+            {
+              "id": 16213,
+              "name": "tofu",
+              "localizedName": "tofu",
+              "image": "tofu.png"
+            }
+          ],
+          "equipment": [
+            {
+              "id": 404645,
+              "name": "frying pan",
+              "localizedName": "frying pan",
+              "image": "pan.png"
+            }
+          ],
+          "length": {
+            "number": 10,
+            "unit": "minutes"
+          }
+        },
+        {
+          "number": 5,
+          "step": "Remove to a bowl.",
+          "ingredients": [],
+          "equipment": [
+            {
+              "id": 404783,
+              "name": "bowl",
+              "localizedName": "bowl",
+              "image": "bowl.jpg"
+            }
+          ]
+        },
+        {
+          "number": 6,
+          "step": "Toast 2 tablespoons of sesame seeds in the pan, then toss with the tofu to coat.",
+          "ingredients": [
+            {
+              "id": 12023,
+              "name": "sesame seeds",
+              "localizedName": "sesame seeds",
+              "image": "sesame-seeds.png"
+            },
+            {
+              "id": 18070,
+              "name": "toast",
+              "localizedName": "toast",
+              "image": "toast"
+            },
+            {
+              "id": 16213,
+              "name": "tofu",
+              "localizedName": "tofu",
+              "image": "tofu.png"
+            }
+          ],
+          "equipment": [
+            {
+              "id": 404645,
+              "name": "frying pan",
+              "localizedName": "frying pan",
+              "image": "pan.png"
+            }
+          ]
+        },
+        {
+          "number": 7,
+          "step": "In a small bowl, mix ½ a tablespoon of cornflour, 2 tablespoons of soy sauce and 1 tablespoon of white wine vinegar until combined.",
+          "ingredients": [
+            {
+              "id": 1002068,
+              "name": "white wine vinegar",
+              "localizedName": "white wine vinegar",
+              "image": "vinegar-(white).jpg"
+            },
+            {
+              "id": 20027,
+              "name": "corn starch",
+              "localizedName": "corn starch",
+              "image": "white-powder.jpg"
+            },
+            {
+              "id": 16124,
+              "name": "soy sauce",
+              "localizedName": "soy sauce",
+              "image": "soy-sauce.jpg"
+            }
+          ],
+          "equipment": [
+            {
+              "id": 404783,
+              "name": "bowl",
+              "localizedName": "bowl",
+              "image": "bowl.jpg"
+            }
+          ]
+        },
+        {
+          "number": 8,
+          "step": "Peel and finely chop 1 clove of garlic and trim and finely slice 1 fresh red chilli. Peel a 5cm piece of ginger, then slice into matchsticks. Snap the woody ends from 320g asparagus, and slice on the bias.",
+          "ingredients": [
+            {
+              "id": 10511819,
+              "name": "red chili pepper",
+              "localizedName": "red chili pepper",
+              "image": "red-chili.jpg"
+            },
+            {
+              "id": 11011,
+              "name": "asparagus",
+              "localizedName": "asparagus",
+              "image": "asparagus.png"
+            },
+            {
+              "id": 11215,
+              "name": "garlic",
+              "localizedName": "garlic",
+              "image": "garlic.png"
+            },
+            {
+              "id": 11216,
+              "name": "ginger",
+              "localizedName": "ginger",
+              "image": "ginger.png"
+            },
+            {
+              "id": 1002011,
+              "name": "clove",
+              "localizedName": "clove",
+              "image": "cloves.jpg"
+            }
+          ],
+          "equipment": []
+        },
+        {
+          "number": 9,
+          "step": "Place a wok over a high heat and add 1 teaspoon of groundnut oil. Once hot, stir in the garlic, chilli and ginger, followed by the asparagus and 150g of beansprouts. Cook for a couple of minutes, or until everything is fragrant and golden, stirring continuously.",
+          "ingredients": [
+            {
+              "id": 4042,
+              "name": "peanut oil",
+              "localizedName": "peanut oil",
+              "image": "peanut-oil.jpg"
+            },
+            {
+              "id": 11043,
+              "name": "bean sprouts",
+              "localizedName": "bean sprouts",
+              "image": "bean-sprouts.jpg"
+            },
+            {
+              "id": 11011,
+              "name": "asparagus",
+              "localizedName": "asparagus",
+              "image": "asparagus.png"
+            },
+            {
+              "id": 11819,
+              "name": "chili pepper",
+              "localizedName": "chili pepper",
+              "image": "red-chili.jpg"
+            },
+            {
+              "id": 11215,
+              "name": "garlic",
+              "localizedName": "garlic",
+              "image": "garlic.png"
+            },
+            {
+              "id": 11216,
+              "name": "ginger",
+              "localizedName": "ginger",
+              "image": "ginger.png"
+            }
+          ],
+          "equipment": [
+            {
+              "id": 404666,
+              "name": "wok",
+              "localizedName": "wok",
+              "image": "wok.png"
+            }
+          ]
+        },
+        {
+          "number": 10,
+          "step": "Stir in the cornflour mixture, reduce the heat to medium and cook for 4 to 5 minutes, or until the sauce has thickened, adding a splash of water, if needed.",
+          "ingredients": [
+            {
+              "id": 20027,
+              "name": "corn starch",
+              "localizedName": "corn starch",
+              "image": "white-powder.jpg"
+            },
+            {
+              "id": 0,
+              "name": "sauce",
+              "localizedName": "sauce",
+              "image": ""
+            },
+            {
+              "id": 14412,
+              "name": "water",
+              "localizedName": "water",
+              "image": "water.png"
+            }
+          ],
+          "equipment": [],
+          "length": {
+            "number": 4,
+            "unit": "minutes"
+          }
+        },
+        {
+          "number": 11,
+          "step": "Serve the veggies alongside the tofu with some extra sliced red chilli and cooked rice noodles, if you like.",
+          "ingredients": [
+            {
+              "id": 20134,
+              "name": "cooked rice noodles",
+              "localizedName": "cooked rice noodles",
+              "image": "rice-noodles.jpg"
+            },
+            {
+              "id": 10511819,
+              "name": "red chili pepper",
+              "localizedName": "red chili pepper",
+              "image": "red-chili.jpg"
+            },
+            {
+              "id": 16213,
+              "name": "tofu",
+              "localizedName": "tofu",
+              "image": "tofu.png"
+            }
+          ],
+          "equipment": []
+        },
+        {
+          "number": 12,
+          "step": "Please enable targetting cookies to show this banner",
+          "ingredients": [
+            {
+              "id": 10118192,
+              "name": "cookies",
+              "localizedName": "cookies",
+              "image": "shortbread-cookies.jpg"
+            }
+          ],
+          "equipment": []
+        }
+      ]
+    }
+  ],
+  "sourceName": null,
+  "creditsText": null,
+  "originalId": null
+}

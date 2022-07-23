@@ -1,10 +1,23 @@
 server:
   port: 8080
 
+logging:
+  level:
+    root: debug
 spring:
   application:
     name: api-wrapper
+  data:
+    mongodb:
+      authentication-database: admin
+      username: rootuser
+      password: rootpass
+      database: foody
+      port: 27017
+      host: localhost
+      uuid-representation: standard
 
 api-wrapper-config:
   base-url: https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes
   host: spoonacular-recipe-food-nutrition-v1.p.rapidapi.com
+
