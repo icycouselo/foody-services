@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.util.Preconditions;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URLEncoder;
@@ -24,7 +25,7 @@ public class ExtractedRecipeController {
 
   @PostMapping("/create")
   @ResponseStatus(HttpStatus.CREATED)
-  public ExtractedRecipe createRecipe(@RequestBody String url) {
+  public ResponseEntity<ExtractedRecipe> createRecipe(@RequestBody String url) {
     Preconditions.checkNotNullOrEmpty(url);
     if (!rfnService.isDomainValid(url)) {
       log.error("{}: Invalid domain.", url);
@@ -35,6 +36,6 @@ public class ExtractedRecipeController {
 
     ExtractedRecipeDTO extractedRecipeDTO = rfnService.getExtractedRecipe(encodedUrl).block();
     ExtractedRecipe extractedRecipe = extractedRecipeService.dtoToEntity(extractedRecipeDTO);
-    return extractedRecipeService.create(extractedRecipe);
+    return new ResponseEntity<>(extractedRecipeService.create(extractedRecipe), HttpStatus.CREATED);
   }
 }
