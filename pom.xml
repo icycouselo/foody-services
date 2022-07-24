@@ -7,7 +7,7 @@
     <groupId>com.icycouselo</groupId>
     <artifactId>foody-services</artifactId>
     <packaging>pom</packaging>
-    <version>v1.1.2-alpha</version>
+    <version>${revision}</version>
     <modules>
         <module>api-wrapper</module>
     </modules>
@@ -16,6 +16,7 @@
 
 
     <properties>
+        <revision>1.1.2-alpha</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
