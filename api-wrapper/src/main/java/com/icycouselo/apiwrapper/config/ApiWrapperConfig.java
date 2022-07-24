@@ -5,6 +5,7 @@ import io.netty.channel.ChannelOption;
 import io.netty.handler.timeout.ReadTimeoutHandler;
 import io.netty.handler.timeout.WriteTimeoutHandler;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -42,5 +43,10 @@ public class ApiWrapperConfig {
         .defaultHeader(HOST_HEADER_KEY, configProperties.getHost())
         .defaultHeader(API_KEY_HEADER_KEY, configProperties.getApiKey())
         .build();
+  }
+
+  @Bean
+  public ModelMapper modelMapper() {
+    return new ModelMapper();
   }
 }

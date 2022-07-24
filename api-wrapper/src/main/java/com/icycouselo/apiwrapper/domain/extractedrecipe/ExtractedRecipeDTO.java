@@ -46,7 +46,7 @@ import java.util.Map;
   "originalId"
 })
 @Generated("jsonschema2pojo")
-public class ExractedRecipeDTO {
+public class ExtractedRecipeDTO {
 
   @JsonProperty("vegetarian")
   private Boolean vegetarian;
@@ -99,8 +99,7 @@ public class ExractedRecipeDTO {
   @JsonProperty("extendedIngredients")
   private List<ExtendedIngredient> extendedIngredients = null;
 
-  @JsonProperty("id")
-  private Integer id;
+  @JsonIgnore private Integer id;
 
   @JsonProperty("title")
   private String title;
@@ -165,7 +164,7 @@ public class ExractedRecipeDTO {
     this.vegetarian = vegetarian;
   }
 
-  public ExractedRecipeDTO withVegetarian(Boolean vegetarian) {
+  public ExtractedRecipeDTO withVegetarian(Boolean vegetarian) {
     this.vegetarian = vegetarian;
     return this;
   }
@@ -180,7 +179,7 @@ public class ExractedRecipeDTO {
     this.vegan = vegan;
   }
 
-  public ExractedRecipeDTO withVegan(Boolean vegan) {
+  public ExtractedRecipeDTO withVegan(Boolean vegan) {
     this.vegan = vegan;
     return this;
   }
@@ -195,7 +194,7 @@ public class ExractedRecipeDTO {
     this.glutenFree = glutenFree;
   }
 
-  public ExractedRecipeDTO withGlutenFree(Boolean glutenFree) {
+  public ExtractedRecipeDTO withGlutenFree(Boolean glutenFree) {
     this.glutenFree = glutenFree;
     return this;
   }
@@ -210,7 +209,7 @@ public class ExractedRecipeDTO {
     this.dairyFree = dairyFree;
   }
 
-  public ExractedRecipeDTO withDairyFree(Boolean dairyFree) {
+  public ExtractedRecipeDTO withDairyFree(Boolean dairyFree) {
     this.dairyFree = dairyFree;
     return this;
   }
@@ -225,7 +224,7 @@ public class ExractedRecipeDTO {
     this.veryHealthy = veryHealthy;
   }
 
-  public ExractedRecipeDTO withVeryHealthy(Boolean veryHealthy) {
+  public ExtractedRecipeDTO withVeryHealthy(Boolean veryHealthy) {
     this.veryHealthy = veryHealthy;
     return this;
   }
@@ -240,7 +239,7 @@ public class ExractedRecipeDTO {
     this.cheap = cheap;
   }
 
-  public ExractedRecipeDTO withCheap(Boolean cheap) {
+  public ExtractedRecipeDTO withCheap(Boolean cheap) {
     this.cheap = cheap;
     return this;
   }
@@ -255,7 +254,7 @@ public class ExractedRecipeDTO {
     this.veryPopular = veryPopular;
   }
 
-  public ExractedRecipeDTO withVeryPopular(Boolean veryPopular) {
+  public ExtractedRecipeDTO withVeryPopular(Boolean veryPopular) {
     this.veryPopular = veryPopular;
     return this;
   }
@@ -270,7 +269,7 @@ public class ExractedRecipeDTO {
     this.sustainable = sustainable;
   }
 
-  public ExractedRecipeDTO withSustainable(Boolean sustainable) {
+  public ExtractedRecipeDTO withSustainable(Boolean sustainable) {
     this.sustainable = sustainable;
     return this;
   }
@@ -285,7 +284,7 @@ public class ExractedRecipeDTO {
     this.lowFodmap = lowFodmap;
   }
 
-  public ExractedRecipeDTO withLowFodmap(Boolean lowFodmap) {
+  public ExtractedRecipeDTO withLowFodmap(Boolean lowFodmap) {
     this.lowFodmap = lowFodmap;
     return this;
   }
@@ -300,7 +299,7 @@ public class ExractedRecipeDTO {
     this.weightWatcherSmartPoints = weightWatcherSmartPoints;
   }
 
-  public ExractedRecipeDTO withWeightWatcherSmartPoints(Integer weightWatcherSmartPoints) {
+  public ExtractedRecipeDTO withWeightWatcherSmartPoints(Integer weightWatcherSmartPoints) {
     this.weightWatcherSmartPoints = weightWatcherSmartPoints;
     return this;
   }
@@ -315,7 +314,7 @@ public class ExractedRecipeDTO {
     this.gaps = gaps;
   }
 
-  public ExractedRecipeDTO withGaps(String gaps) {
+  public ExtractedRecipeDTO withGaps(String gaps) {
     this.gaps = gaps;
     return this;
   }
@@ -330,7 +329,7 @@ public class ExractedRecipeDTO {
     this.preparationMinutes = preparationMinutes;
   }
 
-  public ExractedRecipeDTO withPreparationMinutes(Integer preparationMinutes) {
+  public ExtractedRecipeDTO withPreparationMinutes(Integer preparationMinutes) {
     this.preparationMinutes = preparationMinutes;
     return this;
   }
@@ -345,7 +344,7 @@ public class ExractedRecipeDTO {
     this.cookingMinutes = cookingMinutes;
   }
 
-  public ExractedRecipeDTO withCookingMinutes(Integer cookingMinutes) {
+  public ExtractedRecipeDTO withCookingMinutes(Integer cookingMinutes) {
     this.cookingMinutes = cookingMinutes;
     return this;
   }
@@ -360,7 +359,7 @@ public class ExractedRecipeDTO {
     this.aggregateLikes = aggregateLikes;
   }
 
-  public ExractedRecipeDTO withAggregateLikes(Integer aggregateLikes) {
+  public ExtractedRecipeDTO withAggregateLikes(Integer aggregateLikes) {
     this.aggregateLikes = aggregateLikes;
     return this;
   }
@@ -375,7 +374,7 @@ public class ExractedRecipeDTO {
     this.healthScore = healthScore;
   }
 
-  public ExractedRecipeDTO withHealthScore(Integer healthScore) {
+  public ExtractedRecipeDTO withHealthScore(Integer healthScore) {
     this.healthScore = healthScore;
     return this;
   }
@@ -390,7 +389,7 @@ public class ExractedRecipeDTO {
     this.pricePerServing = pricePerServing;
   }
 
-  public ExractedRecipeDTO withPricePerServing(Double pricePerServing) {
+  public ExtractedRecipeDTO withPricePerServing(Double pricePerServing) {
     this.pricePerServing = pricePerServing;
     return this;
   }
@@ -405,7 +404,7 @@ public class ExractedRecipeDTO {
     this.extendedIngredients = extendedIngredients;
   }
 
-  public ExractedRecipeDTO withExtendedIngredients(List<ExtendedIngredient> extendedIngredients) {
+  public ExtractedRecipeDTO withExtendedIngredients(List<ExtendedIngredient> extendedIngredients) {
     this.extendedIngredients = extendedIngredients;
     return this;
   }
@@ -415,14 +414,9 @@ public class ExractedRecipeDTO {
     return id;
   }
 
-  @JsonProperty("id")
+  @JsonIgnore
   public void setId(Integer id) {
     this.id = id;
-  }
-
-  public ExractedRecipeDTO withId(Integer id) {
-    this.id = id;
-    return this;
   }
 
   @JsonProperty("title")
@@ -435,7 +429,7 @@ public class ExractedRecipeDTO {
     this.title = title;
   }
 
-  public ExractedRecipeDTO withTitle(String title) {
+  public ExtractedRecipeDTO withTitle(String title) {
     this.title = title;
     return this;
   }
@@ -450,7 +444,7 @@ public class ExractedRecipeDTO {
     this.readyInMinutes = readyInMinutes;
   }
 
-  public ExractedRecipeDTO withReadyInMinutes(Integer readyInMinutes) {
+  public ExtractedRecipeDTO withReadyInMinutes(Integer readyInMinutes) {
     this.readyInMinutes = readyInMinutes;
     return this;
   }
@@ -465,7 +459,7 @@ public class ExractedRecipeDTO {
     this.servings = servings;
   }
 
-  public ExractedRecipeDTO withServings(Integer servings) {
+  public ExtractedRecipeDTO withServings(Integer servings) {
     this.servings = servings;
     return this;
   }
@@ -480,7 +474,7 @@ public class ExractedRecipeDTO {
     this.sourceUrl = sourceUrl;
   }
 
-  public ExractedRecipeDTO withSourceUrl(String sourceUrl) {
+  public ExtractedRecipeDTO withSourceUrl(String sourceUrl) {
     this.sourceUrl = sourceUrl;
     return this;
   }
@@ -495,7 +489,7 @@ public class ExractedRecipeDTO {
     this.openLicense = openLicense;
   }
 
-  public ExractedRecipeDTO withOpenLicense(Integer openLicense) {
+  public ExtractedRecipeDTO withOpenLicense(Integer openLicense) {
     this.openLicense = openLicense;
     return this;
   }
@@ -510,7 +504,7 @@ public class ExractedRecipeDTO {
     this.image = image;
   }
 
-  public ExractedRecipeDTO withImage(String image) {
+  public ExtractedRecipeDTO withImage(String image) {
     this.image = image;
     return this;
   }
@@ -525,7 +519,7 @@ public class ExractedRecipeDTO {
     this.imageType = imageType;
   }
 
-  public ExractedRecipeDTO withImageType(String imageType) {
+  public ExtractedRecipeDTO withImageType(String imageType) {
     this.imageType = imageType;
     return this;
   }
@@ -540,7 +534,7 @@ public class ExractedRecipeDTO {
     this.summary = summary;
   }
 
-  public ExractedRecipeDTO withSummary(Object summary) {
+  public ExtractedRecipeDTO withSummary(Object summary) {
     this.summary = summary;
     return this;
   }
@@ -555,7 +549,7 @@ public class ExractedRecipeDTO {
     this.cuisines = cuisines;
   }
 
-  public ExractedRecipeDTO withCuisines(List<Object> cuisines) {
+  public ExtractedRecipeDTO withCuisines(List<Object> cuisines) {
     this.cuisines = cuisines;
     return this;
   }
@@ -570,7 +564,7 @@ public class ExractedRecipeDTO {
     this.dishTypes = dishTypes;
   }
 
-  public ExractedRecipeDTO withDishTypes(List<Object> dishTypes) {
+  public ExtractedRecipeDTO withDishTypes(List<Object> dishTypes) {
     this.dishTypes = dishTypes;
     return this;
   }
@@ -585,7 +579,7 @@ public class ExractedRecipeDTO {
     this.diets = diets;
   }
 
-  public ExractedRecipeDTO withDiets(List<Object> diets) {
+  public ExtractedRecipeDTO withDiets(List<Object> diets) {
     this.diets = diets;
     return this;
   }
@@ -600,7 +594,7 @@ public class ExractedRecipeDTO {
     this.occasions = occasions;
   }
 
-  public ExractedRecipeDTO withOccasions(List<Object> occasions) {
+  public ExtractedRecipeDTO withOccasions(List<Object> occasions) {
     this.occasions = occasions;
     return this;
   }
@@ -615,7 +609,7 @@ public class ExractedRecipeDTO {
     this.instructions = instructions;
   }
 
-  public ExractedRecipeDTO withInstructions(String instructions) {
+  public ExtractedRecipeDTO withInstructions(String instructions) {
     this.instructions = instructions;
     return this;
   }
@@ -630,7 +624,7 @@ public class ExractedRecipeDTO {
     this.analyzedInstructions = analyzedInstructions;
   }
 
-  public ExractedRecipeDTO withAnalyzedInstructions(
+  public ExtractedRecipeDTO withAnalyzedInstructions(
       List<AnalyzedInstruction> analyzedInstructions) {
     this.analyzedInstructions = analyzedInstructions;
     return this;
@@ -646,7 +640,7 @@ public class ExractedRecipeDTO {
     this.sourceName = sourceName;
   }
 
-  public ExractedRecipeDTO withSourceName(Object sourceName) {
+  public ExtractedRecipeDTO withSourceName(Object sourceName) {
     this.sourceName = sourceName;
     return this;
   }
@@ -661,7 +655,7 @@ public class ExractedRecipeDTO {
     this.creditsText = creditsText;
   }
 
-  public ExractedRecipeDTO withCreditsText(Object creditsText) {
+  public ExtractedRecipeDTO withCreditsText(Object creditsText) {
     this.creditsText = creditsText;
     return this;
   }
@@ -676,7 +670,7 @@ public class ExractedRecipeDTO {
     this.originalId = originalId;
   }
 
-  public ExractedRecipeDTO withOriginalId(Object originalId) {
+  public ExtractedRecipeDTO withOriginalId(Object originalId) {
     this.originalId = originalId;
     return this;
   }
@@ -691,7 +685,7 @@ public class ExractedRecipeDTO {
     this.additionalProperties.put(name, value);
   }
 
-  public ExractedRecipeDTO withAdditionalProperty(String name, Object value) {
+  public ExtractedRecipeDTO withAdditionalProperty(String name, Object value) {
     this.additionalProperties.put(name, value);
     return this;
   }
@@ -699,7 +693,7 @@ public class ExractedRecipeDTO {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append(ExractedRecipeDTO.class.getName())
+    sb.append(ExtractedRecipeDTO.class.getName())
         .append('@')
         .append(Integer.toHexString(System.identityHashCode(this)))
         .append('[');
@@ -915,10 +909,10 @@ public class ExractedRecipeDTO {
     if (other == this) {
       return true;
     }
-    if ((other instanceof ExractedRecipeDTO) == false) {
+    if ((other instanceof ExtractedRecipeDTO) == false) {
       return false;
     }
-    ExractedRecipeDTO rhs = ((ExractedRecipeDTO) other);
+    ExtractedRecipeDTO rhs = ((ExtractedRecipeDTO) other);
     return (((((((((((((((((((((((((((((((((((((this.instructions == rhs.instructions)
                                                                                                                                                     || ((this
                                                                                                                                                                 .instructions
