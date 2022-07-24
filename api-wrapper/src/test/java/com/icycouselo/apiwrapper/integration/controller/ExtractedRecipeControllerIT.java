@@ -32,7 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-@TestPropertySource(properties = "spring.mongodb.embedded.version=3.5.5")
+@TestPropertySource(properties = "spring.mongodb.embedded.version=3.4.1")
 class ExtractedRecipeControllerIT {
 
   @Autowired private MockMvc mockMvc;
