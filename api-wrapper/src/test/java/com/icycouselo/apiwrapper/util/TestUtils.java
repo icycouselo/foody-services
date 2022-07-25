@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 @Slf4j
 @ActiveProfiles("dev")
@@ -42,5 +44,22 @@ public class TestUtils {
       throws JsonProcessingException {
     ObjectMapper mapper = new ObjectMapper();
     return mapper.readValue(json, ExtractedRecipeDTO.class);
+  }
+
+  public static List<ExtractedRecipe> createRecipesList() {
+    List<ExtractedRecipe> recipes = new ArrayList<>();
+    ExtractedRecipe recipe1 = new ExtractedRecipe();
+    recipe1.setTitle("Recipe1");
+    ExtractedRecipe recipe2 = new ExtractedRecipe();
+    recipe2.setTitle("Recipe2");
+    ExtractedRecipe recipe3 = new ExtractedRecipe();
+    recipe3.setTitle("Recipe3");
+    ExtractedRecipe recipe4 = new ExtractedRecipe();
+    recipe4.setTitle("Recipe4");
+    recipes.add(recipe1);
+    recipes.add(recipe2);
+    recipes.add(recipe3);
+    recipes.add(recipe4);
+    return recipes;
   }
 }

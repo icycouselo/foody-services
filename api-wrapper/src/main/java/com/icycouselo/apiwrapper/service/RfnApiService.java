@@ -2,7 +2,7 @@ package com.icycouselo.apiwrapper.service;
 
 import com.icycouselo.apiwrapper.domain.extractedrecipe.ExtractedRecipeDTO;
 import com.icycouselo.apiwrapper.exception.ApiServiceException;
-import com.icycouselo.apiwrapper.exception.RFNException;
+import com.icycouselo.apiwrapper.exception.RFNApiException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.validator.routines.DomainValidator;
@@ -20,7 +20,7 @@ import java.nio.charset.StandardCharsets;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class RFNService {
+public class RfnApiService {
   private final WebClient client;
 
   public Mono<ExtractedRecipeDTO> getExtractedRecipe(String encodedUrl) {
@@ -54,12 +54,12 @@ public class RFNService {
       URI uri = new URI(url);
       String host = uri.getHost();
       if (!DomainValidator.getInstance(false).isValid(host)) {
-        throw new RFNException("Invalid Domain.");
+        throw new RFNApiException("Invalid Domain.");
       }
       return true;
     } catch (URISyntaxException e) {
       log.error(": {} is an invalid URI.", url);
-      throw new RFNException(e.getMessage());
+      throw new RFNApiException(e.getMessage());
     }
   }
 }

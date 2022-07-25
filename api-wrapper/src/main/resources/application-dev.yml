@@ -1,9 +1,12 @@
 server:
   port: 8080
+  servlet:
+    context-path: /api/v1/foody-services
 
 logging:
   level:
     root: debug
+
 spring:
   application:
     name: api-wrapper

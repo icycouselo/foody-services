@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 @Data
 @Document(collection = "Extracted Recipes")
@@ -51,4 +52,19 @@ public class ExtractedRecipe {
   private Object creditsText;
   private Object originalId;
   private LocalDateTime created;
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) return true;
+    if (!(o instanceof ExtractedRecipe)) return false;
+    ExtractedRecipe other = (ExtractedRecipe) o;
+    boolean currencyCodeEquals =
+        (this.id == null && other.summary == null) || (this.id != null && this.id.equals(other.id));
+    return this.summary == other.summary && currencyCodeEquals;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, title, title);
+  }
 }
