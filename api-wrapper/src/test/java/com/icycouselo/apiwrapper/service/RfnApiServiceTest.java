@@ -1,6 +1,6 @@
 package com.icycouselo.apiwrapper.service;
 
-import com.icycouselo.apiwrapper.exception.RFNException;
+import com.icycouselo.apiwrapper.exception.RFNApiException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,10 +16,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class RFNServiceTest {
+class RfnApiServiceTest {
 
-  @Mock
-  private RFNService rfnService;
+  @Mock private RfnApiService rfnApiService;
 
   @BeforeEach
   void init() {
@@ -32,12 +31,12 @@ class RFNServiceTest {
     String url = "https://plantbasedrdblog.com/2022/06/red-pesto-pasta/";
     URI uri = new URI(url);
     String host = uri.getHost();
-    when(rfnService.isDomainValid(url)).thenCallRealMethod();
-    boolean domainValid = rfnService.isDomainValid(url);
+    when(rfnApiService.isDomainValid(url)).thenCallRealMethod();
+    boolean domainValid = rfnApiService.isDomainValid(url);
 
     assertEquals("plantbasedrdblog.com", host);
     assertTrue(domainValid);
-    verify(rfnService, times(1)).isDomainValid(url);
+    verify(rfnApiService, times(1)).isDomainValid(url);
   }
 
   @Test
@@ -46,21 +45,22 @@ class RFNServiceTest {
     String url = "https://localhost:8080/";
     URI uri = new URI(url);
     String host = uri.getHost();
-    when(rfnService.isDomainValid(url)).thenCallRealMethod();
+    when(rfnApiService.isDomainValid(url)).thenCallRealMethod();
 
     assertEquals("localhost", host);
-    assertThrows(RFNException.class, ()->  rfnService.isDomainValid(url));
-    verify(rfnService, times(1)).isDomainValid(url);
+    assertThrows(RFNApiException.class, () -> rfnApiService.isDomainValid(url));
+    verify(rfnApiService, times(1)).isDomainValid(url);
   }
 
   @Test
   @DisplayName("Test if domain name is invalid. Should throw URISyntax exception")
   void shouldThrowURISyntaxException() {
     String url = "http://www. test.com/";
-    when(rfnService.isDomainValid(url)).thenCallRealMethod();
+    when(rfnApiService.isDomainValid(url)).thenCallRealMethod();
 
-    RFNException thrown = assertThrows(RFNException.class, () -> rfnService.isDomainValid(url));
+    RFNApiException thrown =
+        assertThrows(RFNApiException.class, () -> rfnApiService.isDomainValid(url));
     assertTrue(thrown.getMessage().contains("Illegal character in authority"));
-    verify(rfnService, times(1)).isDomainValid(url);
+    verify(rfnApiService, times(1)).isDomainValid(url);
   }
 }
