@@ -14,39 +14,41 @@ import java.util.Map;
 @ControllerAdvice
 public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
-  private static final String TIMESTAMP = "timestamp";
-  private static final String MESSAGE = "message";
+    private static final String TIMESTAMP = "timestamp";
+    private static final String MESSAGE = "message";
 
-  @ExceptionHandler(ResourceNotFoundException.class)
-  public ResponseEntity<Object> handleCityNotFoundException(
-      ResourceNotFoundException ex, WebRequest request) {
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<Object> handleCityNotFoundException(
+            ResourceNotFoundException ex, WebRequest request) {
 
-    Map<String, Object> body = new LinkedHashMap<>();
-    body.put(TIMESTAMP, LocalDateTime.now());
-    body.put(MESSAGE, "Resource not found");
+        Map<String, Object> body = new LinkedHashMap<>();
+        body.put(TIMESTAMP, LocalDateTime.now());
+        body.put(MESSAGE, "Invalid Request");
 
-    return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
-  }
+        return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
+    }
 
-  @ExceptionHandler(NoDataFoundException.class)
-  public ResponseEntity<Object> handleNoDataFoundException(
-      NoDataFoundException ex, WebRequest request) {
+    @ExceptionHandler(NoDataFoundException.class)
+    public ResponseEntity<Object> handleNoDataFoundException(
+            NoDataFoundException ex, WebRequest request) {
 
-    Map<String, Object> body = new LinkedHashMap<>();
-    body.put(TIMESTAMP, LocalDateTime.now());
-    body.put(MESSAGE, "No data found");
+        Map<String, Object> body = new LinkedHashMap<>();
+        body.put(TIMESTAMP, LocalDateTime.now());
+        body.put(MESSAGE, "No data found");
 
-    return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
-  }
+        return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
+    }
 
-  @ExceptionHandler(NotRecipeInstanceException.class)
-  public ResponseEntity<Object> handleNotExtractedRecipeInstance(
-      NotRecipeInstanceException ex, WebRequest request) {
+    @ExceptionHandler(NotRecipeInstanceException.class)
+    public ResponseEntity<Object> handleNotExtractedRecipeInstance(
+            NotRecipeInstanceException ex, WebRequest request) {
 
-    Map<String, Object> body = new LinkedHashMap<>();
-    body.put(TIMESTAMP, LocalDateTime.now());
-    body.put(MESSAGE, "No valid recipe found");
+        Map<String, Object> body = new LinkedHashMap<>();
+        body.put(TIMESTAMP, LocalDateTime.now());
+        body.put(MESSAGE, "No valid recipe found");
 
-    return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
-  }
+        return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
+    }
+
+
 }

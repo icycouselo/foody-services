@@ -21,6 +21,7 @@ spring:
       uuid-representation: standard
 
 api-wrapper-config:
-  base-url: https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes
+  api-wrapper-base-url: /api/v1/foody-services
+  foody-api-base-url: https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes
   host: spoonacular-recipe-food-nutrition-v1.p.rapidapi.com
 

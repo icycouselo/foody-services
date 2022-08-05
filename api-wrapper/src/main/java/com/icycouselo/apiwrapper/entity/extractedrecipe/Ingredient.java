@@ -1,4 +1,4 @@
-package com.icycouselo.apiwrapper.domain.extractedrecipe;
+package com.icycouselo.apiwrapper.entity.extractedrecipe;
 
 import com.fasterxml.jackson.annotation.*;
 
@@ -9,7 +9,7 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"id", "name", "localizedName", "image"})
 @Generated("jsonschema2pojo")
-public class Equipment {
+public class Ingredient {
 
     @JsonProperty("id")
     private Integer id;
@@ -36,7 +36,7 @@ public class Equipment {
         this.id = id;
     }
 
-    public Equipment withId(Integer id) {
+    public Ingredient withId(Integer id) {
         this.id = id;
         return this;
     }
@@ -51,7 +51,7 @@ public class Equipment {
         this.name = name;
     }
 
-    public Equipment withName(String name) {
+    public Ingredient withName(String name) {
         this.name = name;
         return this;
     }
@@ -66,7 +66,7 @@ public class Equipment {
         this.localizedName = localizedName;
     }
 
-    public Equipment withLocalizedName(String localizedName) {
+    public Ingredient withLocalizedName(String localizedName) {
         this.localizedName = localizedName;
         return this;
     }
@@ -81,7 +81,7 @@ public class Equipment {
         this.image = image;
     }
 
-    public Equipment withImage(String image) {
+    public Ingredient withImage(String image) {
         this.image = image;
         return this;
     }
@@ -96,7 +96,7 @@ public class Equipment {
         this.additionalProperties.put(name, value);
     }
 
-    public Equipment withAdditionalProperty(String name, Object value) {
+    public Ingredient withAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
         return this;
     }
@@ -104,7 +104,7 @@ public class Equipment {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Equipment.class.getName())
+        sb.append(Ingredient.class.getName())
                 .append('@')
                 .append(Integer.toHexString(System.identityHashCode(this)))
                 .append('[');
@@ -154,10 +154,10 @@ public class Equipment {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Equipment) == false) {
+        if ((other instanceof Ingredient) == false) {
             return false;
         }
-        Equipment rhs = ((Equipment) other);
+        Ingredient rhs = ((Ingredient) other);
         return ((((((this.name == rhs.name) || ((this.name != null) && this.name.equals(rhs.name)))
                 && ((this.image == rhs.image)
                 || ((this.image != null) && this.image.equals(rhs.image))))

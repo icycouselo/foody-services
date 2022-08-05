@@ -1,8 +1,8 @@
 package com.icycouselo.apiwrapper.service;
 
+import com.icycouselo.apiwrapper.dao.ExtractedRecipeRepository;
 import com.icycouselo.apiwrapper.domain.extractedrecipe.ExtractedRecipeDTO;
-import com.icycouselo.apiwrapper.respository.ExtractedRecipeRepository;
-import com.icycouselo.apiwrapper.respository.entity.extractedrecipe.ExtractedRecipe;
+import com.icycouselo.apiwrapper.entity.extractedrecipe.ExtractedRecipe;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Sort;
@@ -17,17 +17,17 @@ import static com.icycouselo.apiwrapper.util.EntityUtils.convertToEntity;
 @AllArgsConstructor
 public class ExtractedRecipeService {
 
-  private final ExtractedRecipeRepository recipeRepository;
+    private final ExtractedRecipeRepository recipeRepository;
 
-  public ExtractedRecipe create(ExtractedRecipe recipe) {
-    return recipeRepository.save(recipe);
-  }
+    public ExtractedRecipe create(ExtractedRecipe recipe) {
+        return recipeRepository.save(recipe);
+    }
 
-  public List<ExtractedRecipe> findAll() {
-    return recipeRepository.findAll(Sort.by("title"));
-  }
+    public List<ExtractedRecipe> findAll() {
+        return recipeRepository.findAll(Sort.by("title"));
+    }
 
-  public ExtractedRecipe dtoToEntity(ExtractedRecipeDTO extractedRecipeDTO) {
-    return convertToEntity(extractedRecipeDTO);
-  }
+    public ExtractedRecipe dtoToEntity(ExtractedRecipeDTO extractedRecipeDTO) {
+        return convertToEntity(extractedRecipeDTO);
+    }
 }

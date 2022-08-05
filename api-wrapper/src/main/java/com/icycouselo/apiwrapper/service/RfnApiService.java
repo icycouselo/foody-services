@@ -21,45 +21,45 @@ import java.nio.charset.StandardCharsets;
 @Slf4j
 @RequiredArgsConstructor
 public class RfnApiService {
-  private final WebClient client;
+    private final WebClient client;
 
-  public Mono<ExtractedRecipeDTO> getExtractedRecipe(String encodedUrl) {
-    String decodedUrl = URLDecoder.decode(encodedUrl, StandardCharsets.UTF_8);
-    return client
-        .get()
-        .uri(uriBuilder -> uriBuilder.path("/extract").queryParam("url", decodedUrl).build())
-        .accept(MediaType.APPLICATION_JSON)
-        .retrieve()
-        .onStatus(
-            HttpStatus::is4xxClientError,
-            error -> {
-              String errMsg = "Error service response status code: ";
-              log.error(errMsg + error.rawStatusCode());
-              return Mono.error(
-                  new ApiServiceException(errMsg + error.rawStatusCode(), error.rawStatusCode()));
-            })
-        .onStatus(
-            HttpStatus::is5xxServerError,
-            error -> {
-              String errMsg = "Error service response status code: ";
-              log.error(errMsg + error.rawStatusCode());
-              return Mono.error(
-                  new ApiServiceException(errMsg + error.rawStatusCode(), error.rawStatusCode()));
-            })
-        .bodyToMono(ExtractedRecipeDTO.class);
-  }
-
-  public boolean isDomainValid(String url) {
-    try {
-      URI uri = new URI(url);
-      String host = uri.getHost();
-      if (!DomainValidator.getInstance(false).isValid(host)) {
-        throw new RFNApiException("Invalid Domain.");
-      }
-      return true;
-    } catch (URISyntaxException e) {
-      log.error(": {} is an invalid URI.", url);
-      throw new RFNApiException(e.getMessage());
+    public Mono<ExtractedRecipeDTO> getExtractedRecipe(String encodedUrl) {
+        String decodedUrl = URLDecoder.decode(encodedUrl, StandardCharsets.UTF_8);
+        return client
+                .get()
+                .uri(uriBuilder -> uriBuilder.path("/extract").queryParam("url", decodedUrl).build())
+                .accept(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .onStatus(
+                        HttpStatus::is4xxClientError,
+                        error -> {
+                            String errMsg = "Error service response status code: ";
+                            log.error(errMsg + error.rawStatusCode());
+                            return Mono.error(
+                                    new ApiServiceException(errMsg + error.rawStatusCode(), error.rawStatusCode()));
+                        })
+                .onStatus(
+                        HttpStatus::is5xxServerError,
+                        error -> {
+                            String errMsg = "Error service response status code: ";
+                            log.error(errMsg + error.rawStatusCode());
+                            return Mono.error(
+                                    new ApiServiceException(errMsg + error.rawStatusCode(), error.rawStatusCode()));
+                        })
+                .bodyToMono(ExtractedRecipeDTO.class);
     }
-  }
+
+    public boolean isDomainValid(String url) {
+        try {
+            URI uri = new URI(url);
+            String host = uri.getHost();
+            if (!DomainValidator.getInstance(false).isValid(host)) {
+                throw new RFNApiException("Invalid Domain.");
+            }
+            return true;
+        } catch (URISyntaxException e) {
+            log.error(": {} is an invalid URI.", url);
+            throw new RFNApiException(e.getMessage());
+        }
+    }
 }

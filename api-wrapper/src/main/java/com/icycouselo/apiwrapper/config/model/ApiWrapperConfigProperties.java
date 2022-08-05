@@ -13,7 +13,16 @@ import org.springframework.context.annotation.Configuration;
 @RequiredArgsConstructor
 public class ApiWrapperConfigProperties {
 
-  @Getter @Setter private String baseUrl;
-  @Getter @Setter private String host;
-  @Getter @Setter private String apiKey;
+    @Getter
+    @Setter
+    private String apiWrapperBaseUrl;
+    @Getter
+    @Setter
+    private String foodyApiBaseUrl;
+    @Getter
+    @Setter
+    private String host;
+    @Getter
+    @Setter
+    private String apiKey;
 }

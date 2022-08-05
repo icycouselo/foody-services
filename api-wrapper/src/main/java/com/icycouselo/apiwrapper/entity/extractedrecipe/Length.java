@@ -1,53 +1,52 @@
-package com.icycouselo.apiwrapper.domain.extractedrecipe;
+package com.icycouselo.apiwrapper.entity.extractedrecipe;
 
 import com.fasterxml.jackson.annotation.*;
 
 import javax.annotation.Generated;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({"name", "steps"})
+@JsonPropertyOrder({"number", "unit"})
 @Generated("jsonschema2pojo")
-public class AnalyzedInstruction {
+public class Length {
 
-    @JsonProperty("name")
-    private String name;
+    @JsonProperty("number")
+    private Integer number;
 
-    @JsonProperty("steps")
-    private List<Step> steps = null;
+    @JsonProperty("unit")
+    private String unit;
 
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("name")
-    public String getName() {
-        return name;
+    @JsonProperty("number")
+    public Integer getNumber() {
+        return number;
     }
 
-    @JsonProperty("name")
-    public void setName(String name) {
-        this.name = name;
+    @JsonProperty("number")
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 
-    public AnalyzedInstruction withName(String name) {
-        this.name = name;
+    public Length withNumber(Integer number) {
+        this.number = number;
         return this;
     }
 
-    @JsonProperty("steps")
-    public List<Step> getSteps() {
-        return steps;
+    @JsonProperty("unit")
+    public String getUnit() {
+        return unit;
     }
 
-    @JsonProperty("steps")
-    public void setSteps(List<Step> steps) {
-        this.steps = steps;
+    @JsonProperty("unit")
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 
-    public AnalyzedInstruction withSteps(List<Step> steps) {
-        this.steps = steps;
+    public Length withUnit(String unit) {
+        this.unit = unit;
         return this;
     }
 
@@ -61,7 +60,7 @@ public class AnalyzedInstruction {
         this.additionalProperties.put(name, value);
     }
 
-    public AnalyzedInstruction withAdditionalProperty(String name, Object value) {
+    public Length withAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
         return this;
     }
@@ -69,17 +68,17 @@ public class AnalyzedInstruction {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(AnalyzedInstruction.class.getName())
+        sb.append(Length.class.getName())
                 .append('@')
                 .append(Integer.toHexString(System.identityHashCode(this)))
                 .append('[');
-        sb.append("name");
+        sb.append("number");
         sb.append('=');
-        sb.append(((this.name == null) ? "<null>" : this.name));
+        sb.append(((this.number == null) ? "<null>" : this.number));
         sb.append(',');
-        sb.append("steps");
+        sb.append("unit");
         sb.append('=');
-        sb.append(((this.steps == null) ? "<null>" : this.steps));
+        sb.append(((this.unit == null) ? "<null>" : this.unit));
         sb.append(',');
         sb.append("additionalProperties");
         sb.append('=');
@@ -96,11 +95,11 @@ public class AnalyzedInstruction {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result * 31) + ((this.name == null) ? 0 : this.name.hashCode()));
+        result = ((result * 31) + ((this.number == null) ? 0 : this.number.hashCode()));
+        result = ((result * 31) + ((this.unit == null) ? 0 : this.unit.hashCode()));
         result =
                 ((result * 31)
                         + ((this.additionalProperties == null) ? 0 : this.additionalProperties.hashCode()));
-        result = ((result * 31) + ((this.steps == null) ? 0 : this.steps.hashCode()));
         return result;
     }
 
@@ -109,14 +108,15 @@ public class AnalyzedInstruction {
         if (other == this) {
             return true;
         }
-        if ((other instanceof AnalyzedInstruction) == false) {
+        if ((other instanceof Length) == false) {
             return false;
         }
-        AnalyzedInstruction rhs = ((AnalyzedInstruction) other);
-        return ((((this.name == rhs.name) || ((this.name != null) && this.name.equals(rhs.name)))
+        Length rhs = ((Length) other);
+        return ((((this.number == rhs.number)
+                || ((this.number != null) && this.number.equals(rhs.number)))
+                && ((this.unit == rhs.unit) || ((this.unit != null) && this.unit.equals(rhs.unit))))
                 && ((this.additionalProperties == rhs.additionalProperties)
                 || ((this.additionalProperties != null)
-                && this.additionalProperties.equals(rhs.additionalProperties))))
-                && ((this.steps == rhs.steps) || ((this.steps != null) && this.steps.equals(rhs.steps))));
+                && this.additionalProperties.equals(rhs.additionalProperties))));
     }
 }

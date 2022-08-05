@@ -1,4 +1,4 @@
-package com.icycouselo.apiwrapper.domain.extractedrecipe;
+package com.icycouselo.apiwrapper.entity.extractedrecipe;
 
 import com.fasterxml.jackson.annotation.*;
 

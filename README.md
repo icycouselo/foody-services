@@ -5,6 +5,7 @@ An application to retrieve a recipe from a specific URL and extract the recipe m
 **TODO:** Write more detailed description.
 
 # Requirements:
+
 * Java 17
 * Maven
 * Docker

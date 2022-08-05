@@ -1,53 +1,52 @@
-package com.icycouselo.apiwrapper.domain.extractedrecipe;
+package com.icycouselo.apiwrapper.entity.extractedrecipe;
 
 import com.fasterxml.jackson.annotation.*;
 
 import javax.annotation.Generated;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({"name", "steps"})
+@JsonPropertyOrder({"us", "metric"})
 @Generated("jsonschema2pojo")
-public class AnalyzedInstruction {
+public class Measures {
 
-    @JsonProperty("name")
-    private String name;
+    @JsonProperty("us")
+    private Us us;
 
-    @JsonProperty("steps")
-    private List<Step> steps = null;
+    @JsonProperty("metric")
+    private Metric metric;
 
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("name")
-    public String getName() {
-        return name;
+    @JsonProperty("us")
+    public Us getUs() {
+        return us;
     }
 
-    @JsonProperty("name")
-    public void setName(String name) {
-        this.name = name;
+    @JsonProperty("us")
+    public void setUs(Us us) {
+        this.us = us;
     }
 
-    public AnalyzedInstruction withName(String name) {
-        this.name = name;
+    public Measures withUs(Us us) {
+        this.us = us;
         return this;
     }
 
-    @JsonProperty("steps")
-    public List<Step> getSteps() {
-        return steps;
+    @JsonProperty("metric")
+    public Metric getMetric() {
+        return metric;
     }
 
-    @JsonProperty("steps")
-    public void setSteps(List<Step> steps) {
-        this.steps = steps;
+    @JsonProperty("metric")
+    public void setMetric(Metric metric) {
+        this.metric = metric;
     }
 
-    public AnalyzedInstruction withSteps(List<Step> steps) {
-        this.steps = steps;
+    public Measures withMetric(Metric metric) {
+        this.metric = metric;
         return this;
     }
 
@@ -61,7 +60,7 @@ public class AnalyzedInstruction {
         this.additionalProperties.put(name, value);
     }
 
-    public AnalyzedInstruction withAdditionalProperty(String name, Object value) {
+    public Measures withAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
         return this;
     }
@@ -69,17 +68,17 @@ public class AnalyzedInstruction {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(AnalyzedInstruction.class.getName())
+        sb.append(Measures.class.getName())
                 .append('@')
                 .append(Integer.toHexString(System.identityHashCode(this)))
                 .append('[');
-        sb.append("name");
+        sb.append("us");
         sb.append('=');
-        sb.append(((this.name == null) ? "<null>" : this.name));
+        sb.append(((this.us == null) ? "<null>" : this.us));
         sb.append(',');
-        sb.append("steps");
+        sb.append("metric");
         sb.append('=');
-        sb.append(((this.steps == null) ? "<null>" : this.steps));
+        sb.append(((this.metric == null) ? "<null>" : this.metric));
         sb.append(',');
         sb.append("additionalProperties");
         sb.append('=');
@@ -96,11 +95,11 @@ public class AnalyzedInstruction {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result * 31) + ((this.name == null) ? 0 : this.name.hashCode()));
         result =
                 ((result * 31)
                         + ((this.additionalProperties == null) ? 0 : this.additionalProperties.hashCode()));
-        result = ((result * 31) + ((this.steps == null) ? 0 : this.steps.hashCode()));
+        result = ((result * 31) + ((this.metric == null) ? 0 : this.metric.hashCode()));
+        result = ((result * 31) + ((this.us == null) ? 0 : this.us.hashCode()));
         return result;
     }
 
@@ -109,14 +108,15 @@ public class AnalyzedInstruction {
         if (other == this) {
             return true;
         }
-        if ((other instanceof AnalyzedInstruction) == false) {
+        if ((other instanceof Measures) == false) {
             return false;
         }
-        AnalyzedInstruction rhs = ((AnalyzedInstruction) other);
-        return ((((this.name == rhs.name) || ((this.name != null) && this.name.equals(rhs.name)))
-                && ((this.additionalProperties == rhs.additionalProperties)
+        Measures rhs = ((Measures) other);
+        return ((((this.additionalProperties == rhs.additionalProperties)
                 || ((this.additionalProperties != null)
-                && this.additionalProperties.equals(rhs.additionalProperties))))
-                && ((this.steps == rhs.steps) || ((this.steps != null) && this.steps.equals(rhs.steps))));
+                && this.additionalProperties.equals(rhs.additionalProperties)))
+                && ((this.metric == rhs.metric)
+                || ((this.metric != null) && this.metric.equals(rhs.metric))))
+                && ((this.us == rhs.us) || ((this.us != null) && this.us.equals(rhs.us))));
     }
 }

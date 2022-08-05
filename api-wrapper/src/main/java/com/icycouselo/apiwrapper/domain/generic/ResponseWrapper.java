@@ -8,5 +8,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResponseWrapper<T> {
-  @Getter @Setter T response;
+    @Getter
+    @Setter
+    T response;
 }

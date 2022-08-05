@@ -1,4 +1,4 @@
-package com.icycouselo.apiwrapper.domain.extractedrecipe;
+package com.icycouselo.apiwrapper.entity.extractedrecipe;
 
 import com.fasterxml.jackson.annotation.*;
 
@@ -9,7 +9,7 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"amount", "unitShort", "unitLong"})
 @Generated("jsonschema2pojo")
-public class Us {
+public class Metric {
 
     @JsonProperty("amount")
     private Double amount;
@@ -33,7 +33,7 @@ public class Us {
         this.amount = amount;
     }
 
-    public Us withAmount(Double amount) {
+    public Metric withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
@@ -48,7 +48,7 @@ public class Us {
         this.unitShort = unitShort;
     }
 
-    public Us withUnitShort(String unitShort) {
+    public Metric withUnitShort(String unitShort) {
         this.unitShort = unitShort;
         return this;
     }
@@ -63,7 +63,7 @@ public class Us {
         this.unitLong = unitLong;
     }
 
-    public Us withUnitLong(String unitLong) {
+    public Metric withUnitLong(String unitLong) {
         this.unitLong = unitLong;
         return this;
     }
@@ -78,7 +78,7 @@ public class Us {
         this.additionalProperties.put(name, value);
     }
 
-    public Us withAdditionalProperty(String name, Object value) {
+    public Metric withAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
         return this;
     }
@@ -86,7 +86,7 @@ public class Us {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Us.class.getName())
+        sb.append(Metric.class.getName())
                 .append('@')
                 .append(Integer.toHexString(System.identityHashCode(this)))
                 .append('[');
@@ -131,10 +131,10 @@ public class Us {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Us) == false) {
+        if ((other instanceof Metric) == false) {
             return false;
         }
-        Us rhs = ((Us) other);
+        Metric rhs = ((Metric) other);
         return (((((this.amount == rhs.amount)
                 || ((this.amount != null) && this.amount.equals(rhs.amount)))
                 && ((this.unitLong == rhs.unitLong)
