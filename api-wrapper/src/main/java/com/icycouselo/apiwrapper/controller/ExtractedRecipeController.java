@@ -7,7 +7,6 @@ import com.icycouselo.apiwrapper.exception.NotRecipeInstanceException;
 import com.icycouselo.apiwrapper.model.RecipeUrl;
 import com.icycouselo.apiwrapper.service.ExtractedRecipeService;
 import com.icycouselo.apiwrapper.service.RfnApiService;
-import com.icycouselo.apiwrapper.util.EntityUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -42,13 +41,12 @@ public class ExtractedRecipeController {
             consumes = {MediaType.APPLICATION_JSON_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE})
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<ExtractedRecipe> createRecipe(@RequestBody ExtractedRecipeDTO recipe) {
+    public ResponseEntity<Void> createRecipe(@RequestBody ExtractedRecipeDTO recipe) {
         if (recipe == null) {
             throw new NotRecipeInstanceException("Invalid recipe");
         }
-        ExtractedRecipe extractedRecipe = EntityUtils.convertToEntity(recipe);
 
-        return new ResponseEntity<>(recipeService.create(extractedRecipe), HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PostMapping(
