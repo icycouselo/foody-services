@@ -1,10 +1,13 @@
 server:
   port: 8080
+  servlet:
+    context-path: /api/v1/foody-services
 
-spring:
-  application:
-    name: api-wrapper
+logging:
+  level:
+    root: debug
 
 api-wrapper-config:
   base-url: https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes
   host: spoonacular-recipe-food-nutrition-v1.p.rapidapi.com
+
