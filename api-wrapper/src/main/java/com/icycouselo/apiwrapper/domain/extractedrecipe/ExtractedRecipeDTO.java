@@ -1142,7 +1142,7 @@ public class ExtractedRecipeDTO {
                 && ((this.lowFodmap == rhs.lowFodmap)
                 || ((this.lowFodmap != null)
                 && this.lowFodmap.equals(rhs.lowFodmap))))
-                && ((this.weightWatcherSmartPoints == rhs.weightWatcherSmartPoints)
+                && ((this.weightWatcherSmartPoints.equals(rhs.weightWatcherSmartPoints))
                 || ((this.weightWatcherSmartPoints != null)
                 && this.weightWatcherSmartPoints.equals(
                 rhs.weightWatcherSmartPoints))))
