@@ -26,7 +26,7 @@
         <spring.boot.dependencies.version>2.7.0</spring.boot.dependencies.version>
         <okhttp3.mockwebserver.version>4.9.3</okhttp3.mockwebserver.version>
         <okhttp3.okhttp.version>4.9.3</okhttp3.okhttp.version>
-        <reactor.test.version>3.4.21</reactor.test.version>
+        <reactor.test.version>3.4.22</reactor.test.version>
         <lombok.version>1.18.24</lombok.version>
         <surefire.plugin.version>2.22.2</surefire.plugin.version>
         <maven.failsafe.version>3.0.0-M6</maven.failsafe.version>
