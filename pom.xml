@@ -21,7 +21,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <spring.version>5.3.20</spring.version>
-        <spring.boot>2.7.1</spring.boot>
+        <spring.boot>3.0.11</spring.boot>
         <spring.boot.maven.plugin.version>2.7.0</spring.boot.maven.plugin.version>
         <spring.boot.dependencies.version>2.7.0</spring.boot.dependencies.version>
         <okhttp3.mockwebserver.version>4.9.3</okhttp3.mockwebserver.version>
